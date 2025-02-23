@@ -15,7 +15,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] Button btnReturn;
     [SerializeField] GridLayoutGroup gridItem;
 
-    Image[] itemList;
+    Image[] listItem;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class InventoryUI : MonoBehaviour
         btnReturn.onClick.AddListener(OnClickReturn);
 
         // ItemView 이미지들 참조
-        itemList = gridItem.GetComponentsInChildren<Image>();
+        listItem = gridItem.GetComponentsInChildren<Image>();
     }
 
     private void OnClickReturn()
@@ -32,6 +32,7 @@ public class InventoryUI : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
+    #region Update UIText
     public void UpdateGold(float gold)
     {
         textGold.text = gold.ToString();
@@ -56,12 +57,13 @@ public class InventoryUI : MonoBehaviour
     {
         textAttack.text = attack.ToString();
     }
+    #endregion
 
     public void UpdateItemList(List<Item> items)
     {
-        for(int i = 0; i < itemList.Length; i++)
+        for(int i = 0; i < listItem.Length; i++)
         {
-            itemList[i].sprite = items[i].ItemSprite.sprite;
+            listItem[i].sprite = items[i].ItemSprite.sprite;
         }
     }
 }
@@ -71,4 +73,13 @@ public class Item : MonoBehaviour
 {
     SpriteRenderer itemSprite;
     public SpriteRenderer ItemSprite { get; private set; }
+
+    float attack;
+    public float Attack { get; private set; }
+
+    float health;
+    public float Health { get; private set; }
+
+    ItemType type;
+    public ItemType Type { get; private set; }
 }
