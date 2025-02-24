@@ -734,6 +734,12 @@ MonoBehaviour:
   - itemName: "\uC2ED\uC790\uAD81"
     itemIcon: {fileID: 21300000, guid: d7e338d583284e24ca7a5189ca13c12c, type: 3}
     price: 300
+  - itemName: "\uC9C0\uAC74"
+    itemIcon: {fileID: 21300000, guid: 8b9230dd37ea3b1409a0bfcd90094d2f, type: 3}
+    price: 100
+  - itemName: "\uC2A4\uD0E0\uB4DC \uAD6C\uD604\uC758 \uD654\uC0B4"
+    itemIcon: {fileID: -268791349, guid: 97a1e2328ba0ee9479f7b4a127213c94, type: 3}
+    price: 100
   itemPrefab: {fileID: 4397211603299386043}
   content: {fileID: 1551838022}
 --- !u!4 &1167628865
@@ -1474,8 +1480,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2.432434}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 0.0025177, y: -2.4299}
+  m_SizeDelta: {x: 899.99, y: 910}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714474929
 MonoBehaviour:
