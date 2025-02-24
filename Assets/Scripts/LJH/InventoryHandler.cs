@@ -8,12 +8,11 @@ public enum ItemType { Weapon, Armor, gloves, Shoes, End }
 
 public class InventoryHandler : MonoBehaviour
 {
-    List<Item> listItem;
-    Item[] equipment;
+    [SerializeField] InventoryData data;
 
     private void Start()
     {
-        equipment = new Item[(int)ItemType.End];
+        data.equipment = new Item[(int)ItemType.End];
     }
 
     // 인벤토리에 아이템 추가
@@ -21,13 +20,13 @@ public class InventoryHandler : MonoBehaviour
     {
         Item newItem = Instantiate(item);
 
-        listItem.Add(newItem);
+        data.listItem.Add(newItem);
     }
 
     // 아이템 장착
     public void EquipItem(Item item)
     {
-        equipment[(int)item.Type] = item;
+        data.equipment[(int)item.Type] = item;
     }
 
     // 장착 중인 장비의 총 공격력 가져오기
@@ -35,9 +34,9 @@ public class InventoryHandler : MonoBehaviour
     {
         float total = 0;
 
-        for(int i = 0; i < equipment.Length; i++)
+        for(int i = 0; i < data.equipment.Length; i++)
         {
-            total += equipment[i] ? equipment[i].Attack : 0;
+            total += data.equipment[i] ? data.equipment[i].Attack : 0;
         }
 
         return total;
@@ -48,11 +47,18 @@ public class InventoryHandler : MonoBehaviour
     {
         float total = 0;
 
-        for (int i = 0; i < equipment.Length; i++)
+        for (int i = 0; i < data.equipment.Length; i++)
         {
-            total += equipment[i] ? equipment[i].Health : 0;
+            total += data.equipment[i] ? data.equipment[i].Health : 0;
         }
 
         return total;
     }
+}
+
+[CreateAssetMenu(fileName = "InventoryHandler", menuName = "Game Data/Inventory Data")]
+public class InventoryData : ScriptableObject
+{
+    public List<Item> listItem;
+    public Item[] equipment;
 }
