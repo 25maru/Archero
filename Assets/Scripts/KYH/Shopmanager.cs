@@ -62,7 +62,7 @@ public class ShopManager : MonoBehaviour
 
     void UpdateGoldUI()
     {
-        goldText.text = $"°ñµå: {playerGold}";
+        goldText.text = $"°ñµå {playerGold}";
     }
 }
 
