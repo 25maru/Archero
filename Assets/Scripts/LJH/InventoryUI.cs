@@ -14,12 +14,11 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI textAttack;
     [SerializeField] Button btnReturn;
     [SerializeField] GridLayoutGroup gridItem;
+    
+    // PlayerStat 참조
+    [SerializeField] PlayerData playerData;
 
     Image[] listItem;
-
-    // PlayerStat 참조
-    public PlayerData playerData;
-
 
     private void Start()
     {
