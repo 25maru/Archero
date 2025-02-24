@@ -123,6 +123,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &39783900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 39783902}
+  - component: {fileID: 39783901}
+  m_Layer: 0
+  m_Name: TestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &39783901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39783900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0593377c3ccfc4fb9ff111ac2a6052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tired:
+  - {fileID: 1320020410}
+  - {fileID: 399877493}
+  - {fileID: 1246859704}
+  - {fileID: 1098124949}
+  FullTired: {fileID: 2800000, guid: ed6fb1a26cf82c54e9cf46ea89dd127d, type: 3}
+  EmptyTired: {fileID: 2800000, guid: 16475dc54f5ea3740abaf897074fc766, type: 3}
+--- !u!4 &39783902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39783900}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &78186281
 GameObject:
   m_ObjectHideFlags: 0
@@ -7422,7 +7473,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1652653352}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 39783901}
+        m_TargetAssemblyTypeName: TiredManager, Assembly-CSharp
+        m_MethodName: MinusTired
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1652653352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8120,3 +8183,4 @@ SceneRoots:
   - {fileID: 100924429}
   - {fileID: 1617538134}
   - {fileID: 1589794298}
+  - {fileID: 39783902}
