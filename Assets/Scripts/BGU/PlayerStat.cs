@@ -6,35 +6,31 @@ public class PlayerStat : MonoBehaviour
 {
     public PlayerData playerData;
 
-    public int HP;
-    public int MaxHP;
-    public bool IsDead = false;
-
     void Start()
     {
-        HP = MaxHP;
+        playerData.HP = playerData.MaxHP;
     }
 
     public void TakeDamage(int damage)
     {
-        HP -= damage;
+        playerData.HP -= damage;
 
-        if (HP < 0)
+        if (playerData.HP < 0)
         {
-            HP = 0;
-            IsDead = true;
+            playerData.HP = 0;
+            playerData.IsDead = true;
             Die();
         }
     }
 
     public void Heal(int amount)
     {
-        if (IsDead) return; // 죽었으면 회복 불가
+        if (playerData.IsDead) return; // 죽었으면 회복 불가
 
-        HP += amount;
-        if (HP > MaxHP)
+        playerData.HP += amount;
+        if (playerData.HP > playerData.MaxHP)
         {
-            HP = MaxHP;
+            playerData.HP = playerData.MaxHP;
         }
     }
 
