@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStatUI : MonoBehaviour
 {
-    public PlayerStat playerStat;               // 플레이어 스탯 정보
+    public PlayerStat playerStat;                   // 플레이어 스탯 정보
     public TextMeshProUGUI playerNameText;          // 플레이어 이름
-    public TextMeshProUGUI playerAttackText;     // 플레이어 공격 스텟
-    public TextMeshProUGUI playerMaxHPText;            // 플레이어 체력 스텟
-    public TextMeshProUGUI goldText;            // 플레이어가 소지한 골드
-    public TextMeshProUGUI diamondText;         // 플레이어가 소지한 다이아몬드
+    public TextMeshProUGUI playerAttackText;        // 플레이어 공격 스텟
+    public TextMeshProUGUI playerMaxHPText;         // 플레이어 체력 스텟
+    public TextMeshProUGUI goldText;                // 플레이어가 소지한 골드
+    public TextMeshProUGUI diamondText;             // 플레이어가 소지한 다이아몬드
 
     void Start()
     {
