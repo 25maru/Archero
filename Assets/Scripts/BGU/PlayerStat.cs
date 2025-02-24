@@ -12,6 +12,9 @@ public class PlayerStat : MonoBehaviour
     public int AttackSpeed;         // 공격 속도
     public bool IsDead = false;     // 사망조건
 
+    public int Gold;                // 골드
+    public int Diamond;             // 다이아몬드
+
     void Start()
     {
         HP = MaxHP;   
