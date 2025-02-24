@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerStat : MonoBehaviour
 {
+    public PlayerData playerData;
+
     public string Name = "Test";                                     // 플레이어 이름
     public int HP = 100;                                             // 체력
     public int MaxHP = 100;                                          // 최대 체력
@@ -11,8 +13,8 @@ public class PlayerStat : MonoBehaviour
 
     public int Gold = 0;                                             // 골드
     public int Diamond = 0;                                          // 다이아몬드
-    
-    [Range(1,20)] [SerializeField] public int speed = 10;            // 캐릭터 속도
+
+    [Range(1, 20)][SerializeField] public int speed = 10;            // 캐릭터 속도
     public int Speed
     {
         get { return speed; }
@@ -34,7 +36,7 @@ public class PlayerStat : MonoBehaviour
 
     void Start()
     {
-        HP = MaxHP;   
+        HP = MaxHP;
     }
 
     public void TakeDamage(int damage)
@@ -62,6 +64,6 @@ public class PlayerStat : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log ("캐릭터가 사망했습니다.");
+        Debug.Log("캐릭터가 사망했습니다.");
     }
 }

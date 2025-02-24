@@ -17,6 +17,10 @@ public class InventoryUI : MonoBehaviour
 
     Image[] listItem;
 
+    // PlayerStat 참조
+    public PlayerData playerData;
+
+
     private void Start()
     {
         // 돌아가기 버튼 클릭 이벤트 연결
@@ -24,6 +28,21 @@ public class InventoryUI : MonoBehaviour
 
         // ItemView 이미지들 참조
         listItem = gridItem.GetComponentsInChildren<Image>();
+
+        if (playerData != null)
+        {
+            // PlayerStat의 값을 가져와 UI 업데이트
+            UpdateUIFromPlayerStat();
+        }
+    }
+
+    public void UpdateUIFromPlayerStat()
+    {
+        textGold.text = playerData.Gold.ToString();
+        textDiamond.text = playerData.Diamond.ToString();
+        textName.text = playerData.Name;
+        textHealth.text = playerData.MaxHP.ToString();
+        textAttack.text = playerData.AttackDamage.ToString();
     }
 
     private void OnClickReturn()
