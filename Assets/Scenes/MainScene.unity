@@ -2800,7 +2800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1011819158
 Transform:
   m_ObjectHideFlags: 0
@@ -2961,6 +2961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016320263}
   - component: {fileID: 1016320264}
+  - component: {fileID: 1016320265}
   m_Layer: 0
   m_Name: Bright
   m_TagString: Untagged
@@ -3035,6 +3036,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1016320265
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016320262}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f074aeef158778428a06bc5eee96def, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1066456308
 GameObject:
   m_ObjectHideFlags: 0
@@ -9359,6 +9381,7 @@ GameObject:
   - component: {fileID: 1652653352}
   - component: {fileID: 1652653351}
   - component: {fileID: 1652653354}
+  - component: {fileID: 1652653355}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -9430,7 +9453,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 470587211}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1652653355}
+        m_TargetAssemblyTypeName: StartButtonImpact, Assembly-CSharp
+        m_MethodName: OnClickStartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1652653352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9478,10 +9513,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1652653349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca028d1828a8d434982f36335b5cb8f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4217b6e7044ce234c8fcff1c0fecfb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetState: 4
+  TimeLate: 3
+--- !u!114 &1652653355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652653349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccac4de906154244ad809b9d276246f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Ani: {fileID: 2068166399}
+  Bright: {fileID: 1016320265}
 --- !u!1 &1656917948
 GameObject:
   m_ObjectHideFlags: 0
