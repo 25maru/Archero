@@ -29,9 +29,4 @@ public class PlayerStatUI : MonoBehaviour
             diamondText.text = $"다이아: {playerStat.Diamond}";
         }
     }
-
-    public void MainScene()
-    {
-        // 메인씬 이동
-    }
 }
