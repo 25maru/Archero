@@ -62,4 +62,47 @@ public class GameManager : MonoSingleton<GameManager>
                 break;
         }
     }
+
+    // 게임 시작
+    public void StartGame()
+    {
+        ChangeState(GameState.Playing);
+    }
+
+    // 게임 일시 정지
+    public void PauseGame()
+    {
+        if (CurrentState == GameState.Playing)
+        {
+            ChangeState(GameState.Paused);
+        }
+    }
+
+    // 게임 재개
+    public void ResumeGame()
+    {
+        if (CurrentState == GameState.Paused)
+        {
+            Time.timeScale = 1;
+            ChangeState(GameState.Playing);
+        }
+    }
+
+    // 게임 오버 처리
+    public void GameOver()
+    {
+        ChangeState(GameState.GameOver);
+    }
+
+    // 게임 데이터 저장
+    public void SaveGame()
+    {
+        PlayerPrefs.Save();
+    }
+
+    // 게임 데이터 불러오기
+    public void LoadGame()
+    {
+        
+    }
 }
