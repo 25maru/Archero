@@ -39,10 +39,11 @@ public abstract class BaseController : MonoBehaviour
         {
             anim.SetFloat(DirX, direction.x);
             anim.SetFloat(DirY, direction.y);
+
+            spriteRender.flipX = direction.x < 0;
         }
 
         anim.SetBool(IsMove, direction.magnitude > 0);
 
-        spriteRender.flipX = direction.x < 0;
     }
 }
