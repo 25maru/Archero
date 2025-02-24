@@ -16,6 +16,8 @@ public class GameManager : MonoSingleton<GameManager>
     }
     public GameState CurrentState { get; private set; }
 
+    [SerializeField] private ScriptableObject playerData;
+
     private void Start()
     {
         ChangeState(GameState.Title);
