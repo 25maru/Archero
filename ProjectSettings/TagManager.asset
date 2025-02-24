@@ -53,6 +53,3 @@ TagManager:
   - name: UI
     uniqueID: 3140634109
     locked: 0
-  - name: MenuUI
-    uniqueID: 334099721
-    locked: 0
