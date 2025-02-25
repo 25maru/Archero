@@ -740,7 +740,7 @@ MonoBehaviour:
   - itemName: "\uC2A4\uD0E0\uB4DC \uAD6C\uD604\uC758 \uD654\uC0B4"
     itemIcon: {fileID: -268791349, guid: 97a1e2328ba0ee9479f7b4a127213c94, type: 3}
     price: 100
-  itemPrefab: {fileID: 4397211603299386043}
+  itemPrefab: {fileID: 0}
   content: {fileID: 1551838022}
 --- !u!4 &1167628865
 Transform:
@@ -1702,8 +1702,20 @@ PrefabInstance:
       value: Item Slot
       objectReference: {fileID: 0}
     - target: {fileID: 5347838876591397399, guid: 75cb1cc46f5bc284f9a8f9df9c989426, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347838876591397399, guid: 75cb1cc46f5bc284f9a8f9df9c989426, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 111.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347838876591397399, guid: 75cb1cc46f5bc284f9a8f9df9c989426, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 177.53995
+      value: 188.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347838876591397399, guid: 75cb1cc46f5bc284f9a8f9df9c989426, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -531.28
       objectReference: {fileID: 0}
     - target: {fileID: 5919327703229811416, guid: 75cb1cc46f5bc284f9a8f9df9c989426, type: 3}
       propertyPath: m_Pivot.x
@@ -1793,11 +1805,6 @@ PrefabInstance:
 --- !u!224 &4397211603299386042 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5919327703229811416, guid: 75cb1cc46f5bc284f9a8f9df9c989426, type: 3}
-  m_PrefabInstance: {fileID: 4397211603299386041}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4397211603299386043 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4832762164448843077, guid: 75cb1cc46f5bc284f9a8f9df9c989426, type: 3}
   m_PrefabInstance: {fileID: 4397211603299386041}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
