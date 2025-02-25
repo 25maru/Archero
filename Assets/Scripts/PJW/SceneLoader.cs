@@ -79,6 +79,7 @@ public class SceneLoader : MonoSingleton<SceneLoader>
             yield return null;
         }
         fadeCanvas.alpha = 0;
+        fadeCanvas.blocksRaycasts = false;
     }
 
     /// <summary>
@@ -87,6 +88,7 @@ public class SceneLoader : MonoSingleton<SceneLoader>
     /// <returns></returns>
     private IEnumerator FadeOut()
     {
+        fadeCanvas.blocksRaycasts = true;
         float time = 0;
         while (time < fadeDuration)
         {
