@@ -8,6 +8,16 @@ public class SceneLoader : MonoSingleton<SceneLoader>
     [SerializeField] private CanvasGroup fadeCanvas; // 페이드 효과를 위한 CanvasGroup
     [SerializeField] private float fadeDuration = 0.5f; // 페이드 속도
 
+    protected override void Awake()
+    {
+        base.Awake();
+
+        if (fadeCanvas != null)
+        {
+            DontDestroyOnLoad(fadeCanvas.gameObject);
+        }
+    }
+
     private void Start()
     {
         if (fadeCanvas != null)
