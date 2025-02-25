@@ -564,9 +564,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 99480226696239573, guid: 2f8a588938255f6418787a509cd1d8a9, type: 3}
-  projectileNum: 1
+  projectileNum: 3
   projectileSpacing: 5
-  attackDelay: 10
+  attackDelay: 2
   enemyPool: {fileID: 1737727503}
 --- !u!61 &650537801
 BoxCollider2D:
@@ -1098,7 +1098,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1206260104454825505, guid: 18dc50678c4500f4293834ffe0830856, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1206260104454825505, guid: 18dc50678c4500f4293834ffe0830856, type: 3}
       propertyPath: m_LocalPosition.y
