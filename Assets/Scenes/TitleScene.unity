@@ -6126,7 +6126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff579b22f0fbdbf4b8f894497025afe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeCanvas: {fileID: 764688182990420980}
+  fadeCanvas: {fileID: 1542057540}
   fadeDuration: 0.5
 --- !u!114 &1130399713
 MonoBehaviour:
@@ -6292,7 +6292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1542057536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6384,7 +6384,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542057535}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -6637,4 +6637,4 @@ SceneRoots:
   - {fileID: 1442249761}
   - {fileID: 977288329}
   - {fileID: 21780352}
-  - {fileID: 2396814218433765902}
+  - {fileID: 1542057539}
