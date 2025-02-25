@@ -74,5 +74,7 @@ public class ShopItem
     public string itemName;
     public Sprite itemIcon;
     public int price;
+    public int atk;
+    public int def;
 }
 
