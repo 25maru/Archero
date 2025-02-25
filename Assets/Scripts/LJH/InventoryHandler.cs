@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum ItemType { Weapon, Armor, gloves, Shoes, End }
+public enum ItemType { Weapon, Armor, Gloves, Shoes, Ring, Necklace, End }
 
 public class InventoryHandler : MonoBehaviour
 {
