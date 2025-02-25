@@ -2422,7 +2422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &792584527
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3615,7 +3615,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 214547136}
         m_TargetAssemblyTypeName: SetActive, Assembly-CSharp
-        m_MethodName: TogglePanel
+        m_MethodName: OnNoClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4112,7 +4112,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 214547136}
         m_TargetAssemblyTypeName: SetActive, Assembly-CSharp
-        m_MethodName: TogglePanel
+        m_MethodName: OnYesClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
