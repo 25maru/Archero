@@ -8,7 +8,7 @@ public abstract class BaseController : MonoBehaviour
     protected Rigidbody2D rigid;
     protected SpriteRenderer spriteRender;
     protected Animator anim;
-    protected PlayerStat stat;
+    protected PlayerData stat;
 
     protected Vector2 moveDir = Vector2.zero;
     protected readonly int DirX = Animator.StringToHash("DirX");
@@ -20,7 +20,7 @@ public abstract class BaseController : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spriteRender = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        stat = GetComponent<PlayerStat>();
+        stat = GetComponent<PlayerStat>().playerData;
     }
 
     protected virtual void FixedUpdate()
