@@ -20,7 +20,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Start()
     {
-        ChangeState(GameState.Title);
+        // ChangeState(GameState.Title);
     }
 
     /// <summary>

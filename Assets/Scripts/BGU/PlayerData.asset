@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d2078a6ac58654c96a9e59a4861469, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Test
   HP: 100
   MaxHP: 100
   IsDead: 1
   Gold: 0
   Diamond: 0
-  listItem: []
-  equipment: []
+  speed: 10
+  attackDamage: 3
+  attackSpeed: 3

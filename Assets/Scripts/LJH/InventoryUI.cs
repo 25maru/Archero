@@ -14,6 +14,9 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI textAttack;
     [SerializeField] Button btnReturn;
     [SerializeField] GridLayoutGroup gridItem;
+    
+    // PlayerStat 참조
+    [SerializeField] PlayerData playerData;
 
     Image[] listItem;
 
@@ -24,6 +27,21 @@ public class InventoryUI : MonoBehaviour
 
         // ItemView 이미지들 참조
         listItem = gridItem.GetComponentsInChildren<Image>();
+
+        if (playerData != null)
+        {
+            // PlayerStat의 값을 가져와 UI 업데이트
+            UpdateUIFromPlayerStat();
+        }
+    }
+
+    public void UpdateUIFromPlayerStat()
+    {
+        textGold.text = playerData.Gold.ToString();
+        textDiamond.text = playerData.Diamond.ToString();
+        textName.text = playerData.Name;
+        textHealth.text = playerData.MaxHP.ToString();
+        textAttack.text = playerData.AttackDamage.ToString();
     }
 
     private void OnClickReturn()
