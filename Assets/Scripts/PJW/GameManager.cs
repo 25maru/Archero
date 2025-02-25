@@ -10,6 +10,7 @@ public class GameManager : MonoSingleton<GameManager>
         MainMenu,
         Inventory,
         Store,
+        Select,
         Playing,
         Paused,
         GameOver
@@ -47,6 +48,10 @@ public class GameManager : MonoSingleton<GameManager>
 
             case GameState.Store:
                 // 상점 씬 추가 필요
+                break;
+
+            case GameState.Select:
+                SceneLoader.Instance.LoadScene("SelectScene");
                 break;
 
             case GameState.Playing:
