@@ -44,6 +44,5 @@ public abstract class BaseController : MonoBehaviour
         }
 
         anim.SetBool(IsMove, direction.magnitude > 0);
-
     }
 }
