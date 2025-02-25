@@ -4,13 +4,14 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SetActive : MonoBehaviour
+public class SetActive : InventoryHandler
 {
     public GameObject panelObject;                   // 패널 오브젝트
+    Item item;                                       // 아이템 객체
 
     public void Start()
     {
-        if(panelObject != null)
+        if (panelObject != null)
         {
             // 패넬 오브젝트 숨김
             panelObject.SetActive(false);
@@ -28,7 +29,15 @@ public class SetActive : MonoBehaviour
 
     public void OnYesClicked()
     {
-        Debug.Log("YES 버튼 클릭");
+        if (item != null)
+        {
+            EquipItem(item);                            // 아이템을 매개변수로 전달
+            Debug.Log("아이템을 받아왔습니다.");
+        }
+        else
+        {
+            Debug.LogError("아이템이 설정되지 않았습니다.");
+        }
     }
 
     public void OnNoClicked()
