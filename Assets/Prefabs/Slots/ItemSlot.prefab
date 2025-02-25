@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!1 &7222866256242509204
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 6000860902161723932}
   - component: {fileID: 5866869291149762581}
   - component: {fileID: 2573262606556833548}
+  - component: {fileID: 7991909534444963749}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -155,6 +156,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7991909534444963749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222866256242509204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3cbcf0bacc0784a866e77e3d86e6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemImage: {fileID: 2573262606556833548}
+  item: {fileID: 0}
 --- !u!1 &8217276773238015596
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c02e8de3a7e3f449afe42c52aee9c34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e675da8b4a6ef0842983b769160ab7f4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

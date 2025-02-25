@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -89,18 +90,18 @@ public class InventoryUI : MonoBehaviour
     }
 }
 
-// 임시 아이템 클래스
-public class Item : MonoBehaviour
-{
-    SpriteRenderer itemSprite;
-    public SpriteRenderer ItemSprite { get; private set; }
+//// 임시 아이템 클래스
+//public class Item : MonoBehaviour
+//{
+//    SpriteRenderer itemSprite;
+//    public SpriteRenderer ItemSprite { get; private set; }
 
-    float attack;
-    public float Attack { get; private set; }
+//    float attack;
+//    public float Attack { get; private set; }
 
-    float health;
-    public float Health { get; private set; }
+//    float health;
+//    public float Health { get; private set; }
 
-    ItemType type;
-    public ItemType Type { get; private set; }
-}
+//    ItemType type;
+//    public ItemType Type { get; private set; }
+//}
