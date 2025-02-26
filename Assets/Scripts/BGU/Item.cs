@@ -16,4 +16,9 @@ public class Item : MonoBehaviour
 
     ItemType type;
     public ItemType Type { get; private set; }
+
+    private void Start()
+    {
+        ItemSprite = GetComponent<SpriteRenderer>();
+    }
 }

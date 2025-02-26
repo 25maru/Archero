@@ -35,10 +35,6 @@ public class SetActive : InventoryHandler
             Debug.Log("아이템을 받아왔습니다.");
             panelObject.SetActive(false);               // 장착 후 패널 닫기
         }
-        else
-        {
-            Debug.LogError("아이템이 설정되지 않았습니다.");
-        }
     }
 
     public void OnNoClicked()

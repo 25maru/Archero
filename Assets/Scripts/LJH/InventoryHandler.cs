@@ -59,10 +59,3 @@ public class InventoryHandler : MonoBehaviour
         return total;
     }
 }
-
-[CreateAssetMenu(fileName = "InventoryHandler", menuName = "Game Data/Inventory Data")]
-public class InventoryData : ScriptableObject
-{
-    public List<Item> listItem;
-    public Item[] equipment;
-}
