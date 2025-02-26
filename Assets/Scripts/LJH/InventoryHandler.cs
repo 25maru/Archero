@@ -4,15 +4,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum ItemType { Weapon, Armor, Gloves, Shoes, Ring, Necklace, End }
+public enum ItemType { Weapon, Armor, Head, Shoes, Ring, Necklace, End }
 
 public class InventoryHandler : MonoBehaviour
 {
     [SerializeField] InventoryData data;
+    public InventoryData Data { get { return data; } }
 
     private void Start()
     {
-        data.equipment = new Item[(int)ItemType.End];
+        if (data.equipment == null)
+        {
+            data.equipment = new Item[(int)ItemType.End];
+        }
     }
 
     // 아이템 장착

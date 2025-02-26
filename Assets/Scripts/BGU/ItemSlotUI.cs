@@ -20,7 +20,7 @@ public class ItemSlotUI : MonoBehaviour
         if(setActiveScript != null)
         {
             setActiveScript.item = item;                // item 변수에 아이템 할당
-            setActiveScript.TogglePanel();              // 패널 활성화
+            //setActiveScript.TogglePanel();              // 패널 활성화
             Debug.Log("장착");
         }
     }

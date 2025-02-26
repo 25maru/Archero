@@ -5,9 +5,19 @@ using UnityEngine.UI;
 
 public class EquipSlot : MonoBehaviour
 {
+    [SerializeField] InventoryData invenData;
     public ItemType slotType;           // 슬롯의 아이템 타입
     public Image itemImage;             // 아이템 이미지를 표시할 Image 컴포넌트
     public Item equippedItem;           // 현재 장착된 아이템
+
+    private void Start()
+    {
+        //if (invenData.equipment[(int)slotType])
+        //{
+        //    invenData.equipment[(int)slotType].GetSprite();
+        //    itemImage.sprite = invenData.equipment[(int)slotType].SpriteItem;
+        //}
+    }
 
     //아이템 장착
     public void Equip(Item item)
