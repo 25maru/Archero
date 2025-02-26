@@ -974,12 +974,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17be0b14b92e8574fa5649bbff87ff84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textGold: {fileID: 0}
-  textDiamond: {fileID: 0}
+  textGold: {fileID: 2119364070}
+  textDiamond: {fileID: 1382457968}
   textName: {fileID: 627959184}
   textHealth: {fileID: 1628762207}
   textAttack: {fileID: 145439317}
-  btnReturn: {fileID: 0}
   gridItem: {fileID: 668737017}
   equipSlot:
   - {fileID: 1943586338}

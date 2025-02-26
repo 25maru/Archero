@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52800b0b81d21164abaf214881342c37, type: 3}
   m_Name: InventoryData
   m_EditorClassIdentifier: 
-  listItem: []
-  equipment_Weapon: {fileID: 5527394015127341074, guid: b60d0e12966f3464495349be7099166c, type: 3}
+  listItem:
+  - {fileID: 5527394015127341074, guid: ec02c0a5a71bcc34eb8a0eeb85ec0a55, type: 3}
+  - {fileID: 5527394015127341074, guid: ec02c0a5a71bcc34eb8a0eeb85ec0a55, type: 3}
+  - {fileID: 5527394015127341074, guid: eab3e5ff199b9724da34cd1e95a4a2c6, type: 3}
+  - {fileID: 5527394015127341074, guid: eab3e5ff199b9724da34cd1e95a4a2c6, type: 3}
+  - {fileID: 5527394015127341074, guid: cfb9702145b138d4db19155ab9ba663a, type: 3}
+  equipment_Weapon: {fileID: 0}
   equipment_Armor: {fileID: 0}
-  equipment_Head: {fileID: 5527394015127341074, guid: 5c5137eee23d66746a004ba653fdcf00, type: 3}
+  equipment_Head: {fileID: 0}
   equipment_Shoes: {fileID: 0}
   equipment_Ring: {fileID: 0}
   equipment_Necklace: {fileID: 0}
