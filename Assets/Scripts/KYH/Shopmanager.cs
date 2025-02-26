@@ -7,8 +7,8 @@ public class ShopManager : MonoBehaviour
 {
     [SerializeField] private MenuUIController uIController;
     [SerializeField] private PlayerData playerData;
+    [SerializeField] private ShopData shopData;
 
-    [SerializeField] private List<GameObject> items;
     [SerializeField] private Transform content;
 
     private Dictionary<string, bool> purchasedItems = new Dictionary<string, bool>();
@@ -22,10 +22,9 @@ public class ShopManager : MonoBehaviour
 
     void PopulateShop()
     {
-        foreach (GameObject item in items)
+        foreach (GameObject item in shopData.items)
         {
             GameObject newItem = Instantiate(item, content);
-            Button buyButton = newItem.transform.Find("BuyButton").GetComponent<Button>();
         }
     }
 
@@ -33,7 +32,8 @@ public class ShopManager : MonoBehaviour
     {
         if (goldShow.Use(item.Cost))
         {
-            // 아이템 삭제 -> 인벤토리로 이동
+            shopData.items.Remove(item.gameObject);
+            InventoryManager.Instance.InventoryHandler.Data.listItem.Add(item);
         }
     }
 }
