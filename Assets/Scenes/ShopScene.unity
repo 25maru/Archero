@@ -2430,6 +2430,7 @@ GameObject:
   - component: {fileID: 595160726}
   - component: {fileID: 595160723}
   - component: {fileID: 595160724}
+  - component: {fileID: 595160727}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -2493,6 +2494,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 187780742}
+--- !u!114 &595160727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595160721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0593377c3ccfc4fb9ff111ac2a6052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tired:
+  - {fileID: 802049960}
+  - {fileID: 1839506067}
+  - {fileID: 1827775301}
+  - {fileID: 447958881}
+  FullTired: {fileID: 2800000, guid: ed6fb1a26cf82c54e9cf46ea89dd127d, type: 3}
+  EmptyTired: {fileID: 2800000, guid: 16475dc54f5ea3740abaf897074fc766, type: 3}
 --- !u!1 &599168563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,7 +3640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
