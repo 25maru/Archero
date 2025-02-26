@@ -1,81 +1,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
-    public int playerGold = 1000; // «√∑π¿ÃæÓ¿« √ ±‚ ∞ÒµÂ
-    public Text goldText; // ∞ÒµÂ UI ≈ÿΩ∫∆Æ
+    [SerializeField] private MenuUIController uIController;
+    [SerializeField] private PlayerData playerData;
 
-    public List<ShopItem> items; // ªÛ¡° æ∆¿Ã≈€ ∏Ò∑œ
-    public GameObject itemPrefab; // æ∆¿Ã≈€ ΩΩ∑‘ «¡∏Æ∆’
-    public Transform content; // Scroll View¿« Content
+    [SerializeField] private List<GameObject> items;
+    [SerializeField] private Transform content;
 
-    private Dictionary<string, bool> purchasedItems = new Dictionary<string, bool>(); // ±∏∏≈«— æ∆¿Ã≈€ ¿˙¿Â
+    private Dictionary<string, bool> purchasedItems = new Dictionary<string, bool>();
+    private GoldShow goldShow;
+    private DiaShow diaShow;
 
     void Start()
     {
-        UpdateGoldUI();
         PopulateShop();
     }
 
     void PopulateShop()
     {
-        foreach (ShopItem item in items)
+        foreach (GameObject item in items)
         {
-            GameObject newItem = Instantiate(itemPrefab, content);
-            newItem.transform.Find("ItemName").GetComponent<Text>().text = item.itemName;
-            newItem.transform.Find("Price").GetComponent<Text>().text = item.price.ToString();
-            newItem.transform.Find("Icon").GetComponent<Image>().sprite = item.itemIcon;
-            Debug.Log("æ∆¿Ã≈€ ª˝º∫µ : " + item.itemName);
+            GameObject newItem = Instantiate(item, content);
             Button buyButton = newItem.transform.Find("BuyButton").GetComponent<Button>();
-
-            // æ∆¿Ã≈€¿Ã ¿ÃπÃ ±∏∏≈µ«æ˙¿∏∏È πˆ∆∞ ∫Ò»∞º∫»≠
-            if (purchasedItems.ContainsKey(item.itemName) && purchasedItems[item.itemName])
-            {
-                buyButton.interactable = false;
-                buyButton.GetComponentInChildren<Text>().text = "±∏∏≈ øœ∑·";
-            }
-            else
-            {
-                buyButton.onClick.AddListener(() => BuyItem(item, buyButton));
-            }
         }
     }
 
-    void BuyItem(ShopItem item, Button buyButton)
+    public void BuyItem(Item item)
     {
-        if (playerGold >= item.price)
+        if (goldShow.Use(item.Cost))
         {
-            playerGold -= item.price;
-            purchasedItems[item.itemName] = true; // ±∏∏≈ ªÛ≈¬ ¿˙¿Â
-            buyButton.interactable = false;
-            buyButton.GetComponentInChildren<Text>().text = "±∏∏≈ øœ∑·";
-            UpdateGoldUI();
-            Debug.Log($"{item.itemName} ±∏∏≈ øœ∑·! ≥≤¿∫ ∞ÒµÂ: {playerGold}");
+            // ÏïÑÏù¥ÌÖú ÏÇ≠Ï†ú -> Ïù∏Î≤§ÌÜ†Î¶¨Î°ú Ïù¥Îèô
         }
-        else
-        {
-            Debug.Log("∞ÒµÂ∞° ∫Œ¡∑«’¥œ¥Ÿ!");
-        }
-    }
-
-    void UpdateGoldUI()
-    {
-        goldText.text = $"∞ÒµÂ {playerGold}";
     }
 }
-
-
-
-[System.Serializable]
-public class ShopItem
-{
-    public string itemName;
-    public Sprite itemIcon;
-    public int price;
-    public int atk;
-    public int def;
-
-}
-
