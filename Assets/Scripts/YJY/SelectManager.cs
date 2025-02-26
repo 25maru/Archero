@@ -15,7 +15,6 @@ public class SelectManager : MonoBehaviour
     public GameObject NormalMap;
 
     public GameObject CurrentMap;
-    [SerializeField]GameObject child;
 
     public enum SelectState
     {
