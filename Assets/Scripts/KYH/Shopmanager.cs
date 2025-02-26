@@ -10,6 +10,7 @@ public class ShopManager : MonoBehaviour
 
     [SerializeField] private MenuUIController uIController;
     [SerializeField] private PlayerData playerData;
+    [SerializeField] private InventoryData inventoryData;
     [SerializeField] private ShopData shopData;
 
     [SerializeField] private Transform content;
@@ -22,11 +23,29 @@ public class ShopManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+
+        goldShow = uIController.GetComponent<GoldShow>();
+        diaShow = uIController.GetComponent<DiaShow>();
     }
 
     void Start()
     {
-        PopulateShop();
+        UpdateItemList(shopData.items);
+    }
+
+    public void UpdateItemList(List<GameObject> items)
+    {
+        if (items == null)
+            return;
+
+        int idx = 0;
+        foreach (GameObject item in items)
+        {
+            GameObject newItem = Instantiate(item, content);
+            newItem.GetComponent<Item>().Init(idx);
+
+            idx++;
+        }
     }
 
     void PopulateShop()
@@ -41,9 +60,10 @@ public class ShopManager : MonoBehaviour
     {
         if (goldShow.Use(item.Cost))
         {
-            shopData.items.Remove(item.gameObject);
-            Destroy(item.gameObject);
-            InventoryManager.Instance.InventoryHandler.Data.listItem.Add(item);
+            // shopData.items.Remove(item.gameObject);
+            // Destroy(item.gameObject);
+            Item temp = shopData.items[item.itemIdx].GetComponent<Item>();
+            inventoryData.listItem.Add(temp);
         }
     }
 }

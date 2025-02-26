@@ -33,13 +33,18 @@ public class Item : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "ShopScene")
         {
-            btnPanel.onClick.AddListener(() => ShopManager.Instance.BuyItem(this));
+            btnPanel.onClick.AddListener(BuyItem);
         }
     }
 
     private void ShowPanel()
     {
         InventoryManager.Instance.SetActive.TogglePanel(gameObject);
+    }
+
+    private void BuyItem()
+    {
+        ShopManager.Instance.BuyItem(this);
     }
 
     public void Init(int itemIdx)
