@@ -13,7 +13,6 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI textName;
     [SerializeField] TextMeshProUGUI textHealth;
     [SerializeField] TextMeshProUGUI textAttack;
-    [SerializeField] Button btnReturn;
     [SerializeField] GridLayoutGroup gridItem;
     [SerializeField] Image[] equipSlot;
 
@@ -25,8 +24,6 @@ public class InventoryUI : MonoBehaviour
 
     private void Start()
     {
-        // 돌아가기 버튼 클릭 이벤트 연결
-        btnReturn.onClick.AddListener(OnClickReturn);
 
         invenData = InventoryManager.Instance.InventoryHandler.Data;
 
@@ -57,12 +54,6 @@ public class InventoryUI : MonoBehaviour
         textName.text = playerData.Name;
         textHealth.text = ((int)(playerData.MaxHP + InventoryManager.Instance.InventoryHandler.GetEquipAvility_Health())).ToString();
         textAttack.text = ((int)(playerData.AttackDamage + InventoryManager.Instance.InventoryHandler.GetEquipAvility_Attack())).ToString();
-    }
-
-    private void OnClickReturn()
-    {
-        // 뒤로 가기
-        SceneManager.LoadScene("MainScene");
     }
 
     #region Update UIText
