@@ -17,8 +17,15 @@ MonoBehaviour:
   - {fileID: 5527394015127341074, guid: b1cfd11c538bedc46969ac6ea0872a0d, type: 3}
   - {fileID: 5527394015127341074, guid: 290bdb239860a70469013b1a44d94b60, type: 3}
   - {fileID: 5527394015127341074, guid: f1329dc3c146cc947be33306c63a6438, type: 3}
+  - {fileID: 5527394015127341074, guid: 5c5137eee23d66746a004ba653fdcf00, type: 3}
+  - {fileID: 5527394015127341074, guid: ec02c0a5a71bcc34eb8a0eeb85ec0a55, type: 3}
+  - {fileID: 5527394015127341074, guid: eab3e5ff199b9724da34cd1e95a4a2c6, type: 3}
+  - {fileID: 5527394015127341074, guid: 5a0eec0d9ab510d41893d80098fcb35a, type: 3}
+  - {fileID: 5527394015127341074, guid: dfa78aa7b02c8654780553698c212eef, type: 3}
+  - {fileID: 5527394015127341074, guid: d26c3097368a08f44a83f28f6ab86800, type: 3}
+  - {fileID: 5527394015127341074, guid: da9084676276c4e47afc572c76d87468, type: 3}
   equipment:
-  - {fileID: 5527394015127341074, guid: b1cfd11c538bedc46969ac6ea0872a0d, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
