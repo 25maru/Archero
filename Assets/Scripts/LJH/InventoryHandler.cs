@@ -10,27 +10,15 @@ public class InventoryHandler : MonoBehaviour
 {
     [SerializeField] InventoryData data;
 
-    public EquipSlot[] equipSlots;                  // 장착 슬롯 배열
-
     private void Start()
     {
         data.equipment = new Item[(int)ItemType.End];
-    }
-
-    // 인벤토리에 아이템 추가
-    public void AddItem(Item item)
-    {
-        Item newItem = Instantiate(item);
-
-        data.listItem.Add(newItem);
     }
 
     // 아이템 장착
     public void EquipItem(Item item)
     {
         data.equipment[(int)item.Type] = item;
-
-        equipSlots[(int)item.Type].Equip(item);         // 해당 슬롯에 아이템 장착
     }
 
     // 장착 중인 장비의 총 공격력 가져오기

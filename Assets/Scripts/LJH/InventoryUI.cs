@@ -20,6 +20,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] PlayerData playerData;
 
     Image[] listItem;
+    GridLayout gridLayout;
 
     private void Start()
     {
@@ -28,6 +29,8 @@ public class InventoryUI : MonoBehaviour
 
         // ItemView 이미지들 참조
         listItem = gridItem.GetComponentsInChildren<Image>();
+        
+        gridLayout = GetComponentInChildren<GridLayout>();
 
         if (playerData != null)
         {
@@ -78,29 +81,11 @@ public class InventoryUI : MonoBehaviour
     }
     #endregion
 
-    public void UpdateItemList(List<Item> items)
+    public void UpdateItemList(List<GameObject> items)
     {
-        for(int i = 0; i < listItem.Length; i++)
+       foreach (GameObject item in items)
         {
-            if (i > items.Count)
-                listItem[i] = null;
-
+            Instantiate(item, gridLayout.transform);
         }
     }
 }
-
-//// 임시 아이템 클래스
-//public class Item : MonoBehaviour
-//{
-//    SpriteRenderer itemSprite;
-//    public SpriteRenderer ItemSprite { get; private set; }
-
-//    float attack;
-//    public float Attack { get; private set; }
-
-//    float health;
-//    public float Health { get; private set; }
-
-//    ItemType type;
-//    public ItemType Type { get; private set; }
-//}
