@@ -5,10 +5,16 @@ using UnityEngine;
 
 public abstract class BaseController : MonoBehaviour
 {
+    [Header("Projectile Info")]
+    [SerializeField] protected ProjectileController projectile;
+    [SerializeField] protected int projectileNum = 1;
+    [SerializeField] protected float projectileSpacing = 5f;
+    [SerializeField] protected float attackDelay = 1.5f;
+
     protected Rigidbody2D rigid;
     protected SpriteRenderer spriteRender;
     protected Animator anim;
-    protected PlayerData stat;
+    protected PlayerStat stat;
 
     protected Vector2 moveDir = Vector2.zero;
     protected readonly int DirX = Animator.StringToHash("DirX");
@@ -20,7 +26,7 @@ public abstract class BaseController : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spriteRender = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        stat = GetComponent<PlayerStat>().playerData;
+        stat = GetComponent<PlayerStat>();
     }
 
     protected virtual void FixedUpdate()
@@ -28,9 +34,14 @@ public abstract class BaseController : MonoBehaviour
         Movement(moveDir);
     }
 
+    protected virtual void Attack()
+    {
+        // 추후 이펙트 사운드 필요시 추가
+    }
+
     private void Movement(Vector2 direction)
     {
-        direction = direction * stat.Speed;
+        direction = direction * stat.playerData.Speed;
         
         rigid.velocity = direction;
 

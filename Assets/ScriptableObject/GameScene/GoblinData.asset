@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37d2078a6ac58654c96a9e59a4861469, type: 3}
-  m_Name: PlayerData
+  m_Name: GoblinData
   m_EditorClassIdentifier: 
-  Name: Test
+  Name: Goblin
   HP: 100
   MaxHP: 100
-  IsDead: 1
+  IsDead: 0
   Gold: 0
   Diamond: 0
-  speed: 3
+  speed: 1
   attackDamage: 3
   attackSpeed: 3

@@ -5,9 +5,12 @@ using UnityEngine;
 public class EnemyController : BaseController
 {
     [SerializeField] Transform target;
+
+    [Header("Range Info")]
     [SerializeField] private float followRange = 10f;
     [SerializeField] private float AttackRange = 5f;
-    [SerializeField] private Color gizmoColor = new Color(1, 0, 0, 1f);
+    [SerializeField] private Color gizmoFollowColor = new Color(1, 0, 0, 1f);
+    [SerializeField] private Color gizmoAttackwColor = new Color(0, 0, 1, 1f);
 
     private void Update()
     {
@@ -25,6 +28,7 @@ public class EnemyController : BaseController
             if (distance < AttackRange) // 타겟이 공격범위 안에 있을 경우
             {
                 // 공격
+                Attack();
 
                 moveDir = Vector2.zero;
                 return;
@@ -36,17 +40,14 @@ public class EnemyController : BaseController
 
     private void OnDrawGizmosSelected() // 플레이어 탐색 범위 기즈모로 표시
     {
-        Gizmos.color = gizmoColor;
+        Vector3 center = new Vector3(transform.position.x, transform.position.y);
 
         // 탐색 범위 그리기
-        Vector3 center = new Vector3(transform.position.x, transform.position.y);
-        Vector3 size = new Vector3(followRange, followRange) * 2;
+        Gizmos.color = gizmoFollowColor;
+        Gizmos.DrawWireSphere(center, followRange);
 
-        Gizmos.DrawWireCube(center, size);
-        
         // 공격 범위 그리기
-        size = new Vector3(AttackRange, AttackRange) * 2;
-
+        Gizmos.color = gizmoAttackwColor;
         Gizmos.DrawWireSphere(center, AttackRange);
     }
 }
