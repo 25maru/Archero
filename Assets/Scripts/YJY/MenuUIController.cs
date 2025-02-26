@@ -9,14 +9,20 @@ public class MenuUIController : MonoBehaviour
 
     private void Start()
     {
-        menu.gameObject.SetActive(isMenuOn);
+        menu.SetActive(isMenuOn);
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isMenuOn = !isMenuOn;
-            menu.gameObject.SetActive(isMenuOn);
+            OpenMenu();
         }
+    }
+
+    public void OpenMenu()
+    {
+        isMenuOn = !isMenuOn;
+        menu.SetActive(isMenuOn);
     }
 }
