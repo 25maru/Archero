@@ -40,17 +40,19 @@ public class InventoryHandler : MonoBehaviour
     public float GetEquipAvility_Attack() 
     {
         float total = 0;
-
-        //for(int i = 0; i < data.equipment.Length; i++)
-        //{
-        //    total += data.equipment[i] ? data.equipment[i].Attack : 0;
-        //}
-        total += data.equipment_Weapon.Attack;
-        total += data.equipment_Head.Attack;
-        total += data.equipment_Armor.Attack;
-        total += data.equipment_Shoes.Attack;
-        total += data.equipment_Ring.Attack;
-        total += data.equipment_Necklace.Attack;
+        
+        if (data.equipment_Weapon)
+            total += data.equipment_Weapon.Attack;
+        if (data.equipment_Armor)
+            total += data.equipment_Armor.Attack;
+        if (data.equipment_Head)
+            total += data.equipment_Head.Attack;
+        if (data.equipment_Shoes)
+            total += data.equipment_Shoes.Attack;
+        if (data.equipment_Ring)
+            total += data.equipment_Ring.Attack;
+        if (data.equipment_Necklace)
+            total += data.equipment_Necklace.Attack;
 
         return total;
     }
@@ -60,12 +62,18 @@ public class InventoryHandler : MonoBehaviour
     {
         float total = 0;
 
-        total += data.equipment_Weapon.Health;
-        total += data.equipment_Head.Health;
-        total += data.equipment_Armor.Health;
-        total += data.equipment_Shoes.Health;
-        total += data.equipment_Ring.Health;
-        total += data.equipment_Necklace.Health;
+        if (data.equipment_Weapon)
+            total += data.equipment_Weapon.Health;
+        if (data.equipment_Armor)
+            total += data.equipment_Armor.Health;
+        if (data.equipment_Head)
+            total += data.equipment_Head.Health;
+        if (data.equipment_Shoes)
+            total += data.equipment_Shoes.Health;
+        if (data.equipment_Ring)
+            total += data.equipment_Ring.Health;
+        if (data.equipment_Necklace)
+            total += data.equipment_Necklace.Health;
 
         return total;
     }

@@ -34,10 +34,11 @@ public class SetActive : MonoBehaviour
     {
         Item temp = InventoryManager.Instance.InventoryHandler.Data.listItem[item.itemIdx];
 
-        inventoryHandler.EquipItem(temp);                                   // 아이템을 매개변수로 전달
-        InventoryManager.Instance.InventoryUI.UpdateEquipSlot(item.Type, item.GetItemSprite());   // 장착 UI 업데이트
+        inventoryHandler.EquipItem(temp); // 아이템을 매개변수로 전달
+        InventoryManager.Instance.InventoryUI.UpdateEquipSlot(item.Type, item.GetItemSprite()); // 장착 UI 업데이트
+        InventoryManager.Instance.InventoryUI.UpdateUIFromPlayerStat(); // 플레이어 스탯 UI 업데이트
 
-        gameObject.SetActive(false);                                        // 장착 후 패널 닫기
+        gameObject.SetActive(false); // 장착 후 패널 닫기
         item = null;
     }
 
