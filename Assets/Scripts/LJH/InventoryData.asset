@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: InventoryData
   m_EditorClassIdentifier: 
   listItem: []
-  equipment_Weapon: {fileID: 5527394015127341074, guid: b60d0e12966f3464495349be7099166c, type: 3}
+  equipment_Weapon: {fileID: 0}
   equipment_Armor: {fileID: 0}
-  equipment_Head: {fileID: 5527394015127341074, guid: 5c5137eee23d66746a004ba653fdcf00, type: 3}
+  equipment_Head: {fileID: 0}
   equipment_Shoes: {fileID: 0}
   equipment_Ring: {fileID: 0}
   equipment_Necklace: {fileID: 0}

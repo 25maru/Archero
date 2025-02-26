@@ -38,8 +38,10 @@ public class InventoryUI : MonoBehaviour
             UpdateUIFromPlayerStat();
         }
 
+        // 인벤토리 아이템 리스트 업데이트
         UpdateItemList(invenData.listItem);
 
+        // 장착 중인 아이템 업데이트
         UpdateEquipSlot(ItemType.Weapon, invenData.equipment_Weapon?.GetItemSprite());
         UpdateEquipSlot(ItemType.Armor, invenData.equipment_Armor?.GetItemSprite());
         UpdateEquipSlot(ItemType.Head, invenData.equipment_Head?.GetItemSprite());
@@ -53,8 +55,8 @@ public class InventoryUI : MonoBehaviour
         textGold.text = playerData.Gold.ToString();
         textDiamond.text = playerData.Diamond.ToString();
         textName.text = playerData.Name;
-        textHealth.text = playerData.MaxHP.ToString();
-        textAttack.text = playerData.AttackDamage.ToString();
+        textHealth.text = ((int)(playerData.MaxHP + InventoryManager.Instance.InventoryHandler.GetEquipAvility_Health())).ToString();
+        textAttack.text = ((int)(playerData.AttackDamage + InventoryManager.Instance.InventoryHandler.GetEquipAvility_Attack())).ToString();
     }
 
     private void OnClickReturn()
