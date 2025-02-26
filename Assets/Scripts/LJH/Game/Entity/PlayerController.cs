@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : BaseController
 {
     [SerializeField] GameObject enemyPool;
+    [SerializeField] GameObject Map;
 
     float lastAttack = float.MaxValue;
     Vector3 attackDir = Vector3.zero;
@@ -81,7 +82,7 @@ public class PlayerController : BaseController
             //Vector3 dir = attackDir + (vecNormalAttack * offset);
             //dir = dir.normalized;
 
-            newProjectile.Init(this, createPos, attackDir, "Enemy");
+            newProjectile.Init(this, createPos, attackDir, "Enemy", "Wall");
         }
     }
 }
