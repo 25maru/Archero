@@ -11,6 +11,7 @@ public class ProjectileController : MonoBehaviour
 
     private BaseController sourceObject;
     private string targetTag;
+    private string Wall;
     private Vector3 dir;
 
     private void Start()
@@ -40,18 +41,22 @@ public class ProjectileController : MonoBehaviour
 
             DestroyProjectile();
         }
-        //else if () //// 벽과 충돌 했을 경우
+        //// 벽과 충돌 했을 경우
+        else if (collision.gameObject.CompareTag(Wall))
+        {
+            DestroyProjectile();
+        }
     }
 
     private void DestroyProjectile()
     {
         // 파티클 생성 추가 예정
 
-
+            
         Destroy(gameObject);
     }
 
-    public void Init(BaseController source, Vector3 position, Vector3 dir, string targetTag)
+    public void Init(BaseController source, Vector3 position, Vector3 dir, string targetTag, string Wall)
     {
         // 투사체를 발사한 오브젝트
         sourceObject = source;
@@ -63,5 +68,6 @@ public class ProjectileController : MonoBehaviour
 
         // 목표물의 태그
         this.targetTag = targetTag;
+        this.Wall = Wall;
     }
 }
