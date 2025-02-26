@@ -15,19 +15,20 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI textAttack;
     [SerializeField] Button btnReturn;
     [SerializeField] GridLayoutGroup gridItem;
-    
+    [SerializeField] Image[] equipSlot;
+
     // PlayerStat 참조
     [SerializeField] PlayerData playerData;
 
     InventoryData invenData;
     GridLayoutGroup gridLayout;
 
-    private void Awake()
+    private void Start()
     {
         // 돌아가기 버튼 클릭 이벤트 연결
         btnReturn.onClick.AddListener(OnClickReturn);
 
-        invenData = GetComponent<InventoryHandler>().Data;
+        invenData = InventoryManager.Instance.InventoryHandler.Data;
 
         gridLayout = GetComponentInChildren<GridLayoutGroup>();
 
@@ -38,6 +39,13 @@ public class InventoryUI : MonoBehaviour
         }
 
         UpdateItemList(invenData.listItem);
+
+        UpdateEquipSlot(ItemType.Weapon, invenData.equipment_Weapon?.GetItemSprite());
+        UpdateEquipSlot(ItemType.Armor, invenData.equipment_Armor?.GetItemSprite());
+        UpdateEquipSlot(ItemType.Head, invenData.equipment_Head?.GetItemSprite());
+        UpdateEquipSlot(ItemType.Shoes, invenData.equipment_Shoes?.GetItemSprite());
+        UpdateEquipSlot(ItemType.Ring, invenData.equipment_Ring?.GetItemSprite());
+        UpdateEquipSlot(ItemType.Necklace, invenData.equipment_Necklace?.GetItemSprite());
     }
 
     public void UpdateUIFromPlayerStat()
@@ -87,9 +95,18 @@ public class InventoryUI : MonoBehaviour
         if (items == null)
             return;
 
+        int idx = 0;
        foreach (Item item in items)
         {
-            Instantiate(item, gridLayout.transform);
+            Item newItem = Instantiate(item, gridLayout.transform);
+            newItem.Init(idx);
+
+            idx++;
         }
+    }
+
+    public void UpdateEquipSlot(ItemType type, Sprite sprite)
+    {
+        equipSlot[(int)type].sprite = sprite;
     }
 }

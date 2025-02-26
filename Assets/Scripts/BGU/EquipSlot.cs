@@ -22,8 +22,10 @@ public class EquipSlot : MonoBehaviour
     //아이템 장착
     public void Equip(Item item)
     {
-        equippedItem = item;
-        itemImage.enabled = true;                           // 이미지 표시
+        //equippedItem = item;
+        //itemImage.enabled = true;                           // 이미지 표시
+
+        //itemImage.sprite = invenData.equipment[(int)slotType].SpriteItem;
     }
 
     // 아이템 장착 해제

@@ -6,46 +6,44 @@ using UnityEngine.UI;
 
 public class SetActive : MonoBehaviour
 {
-    public GameObject panelObject;                   // 패널 오브젝트
-    public Item item;                                // 아이템 객체
+    Item item;                                // 아이템 객체
     
     InventoryHandler inventoryHandler;
 
-    private void OnEnable()
+    Button btnYes;
+    Button btnNo;
+
+    private void Awake()
     {
+        btnYes = GetComponentsInChildren<Button>()[0];
+        btnNo = GetComponentsInChildren<Button>()[1];
+
+        btnYes.onClick.AddListener(OnYesClicked);
+        btnNo.onClick.AddListener(OnNoClicked);
+
         inventoryHandler = InventoryManager.Instance.InventoryHandler;
     }
-
-    private void Start()
+   
+    public void TogglePanel(GameObject item)
     {
-        if (panelObject != null)
-        {
-            // 패넬 오브젝트 숨김
-            panelObject.SetActive(false);
-        }
-    }
-
-    public void TogglePanel(Item item)
-    {
-        if (panelObject != null)
-        {
-            bool isActive = !panelObject.activeSelf;    // 현재 상태 반전
-            panelObject.SetActive(isActive);            // 패널 반대 상태로 설정
-        }
+        this.item = item.GetComponent<Item>();
+        gameObject.SetActive(true);     // 패널 반대 상태로 설정
     }
 
     public void OnYesClicked()
     {
-        if (item != null)
-        {
-            inventoryHandler.EquipItem(item);           // 아이템을 매개변수로 전달
-            Debug.Log("아이템을 받아왔습니다.");
-            panelObject.SetActive(false);               // 장착 후 패널 닫기
-        }
+        Item temp = InventoryManager.Instance.InventoryHandler.Data.listItem[item.itemIdx];
+
+        inventoryHandler.EquipItem(temp);                                   // 아이템을 매개변수로 전달
+        InventoryManager.Instance.InventoryUI.UpdateEquipSlot(item.Type, item.GetItemSprite());   // 장착 UI 업데이트
+
+        gameObject.SetActive(false);                                        // 장착 후 패널 닫기
+        item = null;
     }
 
     public void OnNoClicked()
     {
-        panelObject.SetActive(false);                    // 패널 닫기
+        gameObject.SetActive(false);                    // 패널 닫기
+        item = null;
     }
 }
