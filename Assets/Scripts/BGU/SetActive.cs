@@ -4,12 +4,19 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SetActive : InventoryHandler
+public class SetActive : MonoBehaviour
 {
     public GameObject panelObject;                   // 패널 오브젝트
     public Item item;                                // 아이템 객체
+    
+    InventoryHandler inventoryHandler;
 
-    public void Start()
+    private void OnEnable()
+    {
+        inventoryHandler = InventoryManager.Instance.InventoryHandler;
+    }
+
+    private void Start()
     {
         if (panelObject != null)
         {
@@ -18,7 +25,7 @@ public class SetActive : InventoryHandler
         }
     }
 
-    public void TogglePanel()
+    public void TogglePanel(Item item)
     {
         if (panelObject != null)
         {
@@ -31,7 +38,7 @@ public class SetActive : InventoryHandler
     {
         if (item != null)
         {
-            EquipItem(item);                            // 아이템을 매개변수로 전달
+            inventoryHandler.EquipItem(item);           // 아이템을 매개변수로 전달
             Debug.Log("아이템을 받아왔습니다.");
             panelObject.SetActive(false);               // 장착 후 패널 닫기
         }

@@ -4,33 +4,25 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum ItemType { Weapon, Armor, Gloves, Shoes, Ring, Necklace, End }
+public enum ItemType { Weapon, Armor, Head, Shoes, Ring, Necklace, End }
 
 public class InventoryHandler : MonoBehaviour
 {
     [SerializeField] InventoryData data;
-
-    public EquipSlot[] equipSlots;                  // 장착 슬롯 배열
+    public InventoryData Data { get { return data; } }
 
     private void Start()
     {
-        data.equipment = new Item[(int)ItemType.End];
-    }
-
-    // 인벤토리에 아이템 추가
-    public void AddItem(Item item)
-    {
-        Item newItem = Instantiate(item);
-
-        data.listItem.Add(newItem);
+        if (data.equipment == null)
+        {
+            data.equipment = new Item[(int)ItemType.End];
+        }
     }
 
     // 아이템 장착
     public void EquipItem(Item item)
     {
         data.equipment[(int)item.Type] = item;
-
-        equipSlots[(int)item.Type].Equip(item);         // 해당 슬롯에 아이템 장착
     }
 
     // 장착 중인 장비의 총 공격력 가져오기
