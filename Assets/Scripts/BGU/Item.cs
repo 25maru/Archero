@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// ÀÓ½Ã ¾ÆÀÌÅÛ Å¬·¡½º
+// ï¿½Ó½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 public class Item : MonoBehaviour
 {
     [SerializeField] Button btnPanel;
@@ -30,7 +30,7 @@ public class Item : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "ShopScene")
         {
-
+            btnPanel.onClick.AddListener(() => ShopManager.Instance.BuyItem(this));
         }
     }
 
