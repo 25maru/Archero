@@ -15,9 +15,9 @@ MonoBehaviour:
   Name: Test
   HP: 100
   MaxHP: 100
-  IsDead: 1
-  Gold: 0
-  Diamond: 0
+  IsDead: 0
+  Gold: 1000
+  Diamond: 999
   speed: 3
   attackDamage: 3
   attackSpeed: 3
