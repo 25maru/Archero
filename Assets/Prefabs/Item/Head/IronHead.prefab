@@ -101,6 +101,10 @@ PrefabInstance:
       value: IronHead
       objectReference: {fileID: 0}
     - target: {fileID: 8110001664644831247, guid: 4cd3f4d789b031b499165c0a4478090c, type: 3}
+      propertyPath: Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110001664644831247, guid: 4cd3f4d789b031b499165c0a4478090c, type: 3}
       propertyPath: Health
       value: 25
       objectReference: {fileID: 0}
