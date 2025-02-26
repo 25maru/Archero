@@ -13,5 +13,14 @@ MonoBehaviour:
   m_Name: InventoryData
   m_EditorClassIdentifier: 
   listItem:
+  - {fileID: 5527394015127341074, guid: 26353319232e03b499461be2f25b28f6, type: 3}
+  - {fileID: 5527394015127341074, guid: b1cfd11c538bedc46969ac6ea0872a0d, type: 3}
+  - {fileID: 5527394015127341074, guid: 290bdb239860a70469013b1a44d94b60, type: 3}
+  - {fileID: 5527394015127341074, guid: f1329dc3c146cc947be33306c63a6438, type: 3}
+  equipment:
+  - {fileID: 5527394015127341074, guid: b1cfd11c538bedc46969ac6ea0872a0d, type: 3}
   - {fileID: 0}
-  equipment: []
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

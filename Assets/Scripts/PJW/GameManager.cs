@@ -9,7 +9,7 @@ public class GameManager : MonoSingleton<GameManager>
         Title,
         MainMenu,
         Inventory,
-        Store,
+        Shop,
         Select,
         Playing,
         Paused,
@@ -46,8 +46,8 @@ public class GameManager : MonoSingleton<GameManager>
                 SceneLoader.Instance.LoadScene("InventoryScene");
                 break;
 
-            case GameState.Store:
-                // 상점 씬 추가 필요
+            case GameState.Shop:
+                SceneLoader.Instance.LoadScene("ShopScene");
                 break;
 
             case GameState.Select:

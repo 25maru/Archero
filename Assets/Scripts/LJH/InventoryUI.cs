@@ -19,21 +19,25 @@ public class InventoryUI : MonoBehaviour
     // PlayerStat 참조
     [SerializeField] PlayerData playerData;
 
-    Image[] listItem;
+    InventoryData invenData;
+    GridLayoutGroup gridLayout;
 
-    private void Start()
+    private void Awake()
     {
         // 돌아가기 버튼 클릭 이벤트 연결
         btnReturn.onClick.AddListener(OnClickReturn);
 
-        // ItemView 이미지들 참조
-        listItem = gridItem.GetComponentsInChildren<Image>();
+        invenData = GetComponent<InventoryHandler>().Data;
+
+        gridLayout = GetComponentInChildren<GridLayoutGroup>();
 
         if (playerData != null)
         {
             // PlayerStat의 값을 가져와 UI 업데이트
             UpdateUIFromPlayerStat();
         }
+
+        UpdateItemList(invenData.listItem);
     }
 
     public void UpdateUIFromPlayerStat()
@@ -80,27 +84,12 @@ public class InventoryUI : MonoBehaviour
 
     public void UpdateItemList(List<Item> items)
     {
-        for(int i = 0; i < listItem.Length; i++)
-        {
-            if (i > items.Count)
-                listItem[i] = null;
+        if (items == null)
+            return;
 
+       foreach (Item item in items)
+        {
+            Instantiate(item, gridLayout.transform);
         }
     }
 }
-
-//// 임시 아이템 클래스
-//public class Item : MonoBehaviour
-//{
-//    SpriteRenderer itemSprite;
-//    public SpriteRenderer ItemSprite { get; private set; }
-
-//    float attack;
-//    public float Attack { get; private set; }
-
-//    float health;
-//    public float Health { get; private set; }
-
-//    ItemType type;
-//    public ItemType Type { get; private set; }
-//}
