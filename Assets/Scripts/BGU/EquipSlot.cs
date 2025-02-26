@@ -13,7 +13,6 @@ public class EquipSlot : MonoBehaviour
     public void Equip(Item item)
     {
         equippedItem = item;
-        itemImage.sprite = item.ItemSprite.sprite;          // 아이템 이지미 설정
         itemImage.enabled = true;                           // 이미지 표시
     }
 

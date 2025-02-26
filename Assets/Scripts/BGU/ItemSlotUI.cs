@@ -11,7 +11,6 @@ public class ItemSlotUI : MonoBehaviour
     public void SetItem(Item item)
     {
         this.item = item;
-        itemImage.sprite = item.ItemSprite.sprite;      // 아이템 이미지 설정
     }
     
     public void OnItemClicked()
