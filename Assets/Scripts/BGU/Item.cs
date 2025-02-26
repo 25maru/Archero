@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// �ӽ� ������ Ŭ����
+public enum ItemType { Weapon, Armor, Head, Shoes, Ring, Necklace, End }
+
 public class Item : MonoBehaviour
 {
     [SerializeField] Button btnPanel;
@@ -14,6 +15,8 @@ public class Item : MonoBehaviour
     {
         get { return spriteItem; }
     }
+
+    public int itemIdx;
     public string Name;
     public float Attack;
     public float Health;
@@ -22,10 +25,10 @@ public class Item : MonoBehaviour
 
     private void Awake()
     {
+        btnPanel = GetComponent<Button>();
+
         if (SceneManager.GetActiveScene().name == "InventoryScene")
         {
-            spriteItem = GetComponentsInChildren<Image>()[1].sprite;
-
             btnPanel.onClick.AddListener(ShowPanel);
         }
         else if (SceneManager.GetActiveScene().name == "ShopScene")
@@ -36,11 +39,16 @@ public class Item : MonoBehaviour
 
     private void ShowPanel()
     {
-        InventoryManager.Instance.SetActive.TogglePanel(this);
+        InventoryManager.Instance.SetActive.TogglePanel(gameObject);
     }
 
-    public void GetSprite()
+    public void Init(int itemIdx)
     {
-        spriteItem = GetComponentsInChildren<Image>()[1].sprite;
+        this.itemIdx = itemIdx;
+    }
+
+    public Sprite GetItemSprite()
+    {
+        return GetComponentsInChildren<Image>()[1].sprite;
     }
 }

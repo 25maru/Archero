@@ -6,5 +6,10 @@
     public class InventoryData : ScriptableObject
     {
         public List<Item> listItem;
-        public Item[] equipment;
-    }
+        public Item equipment_Weapon;
+        public Item equipment_Armor;
+        public Item equipment_Head;
+        public Item equipment_Shoes;
+        public Item equipment_Ring;
+        public Item equipment_Necklace;
+}
