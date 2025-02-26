@@ -2632,7 +2632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca028d1828a8d434982f36335b5cb8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetState: 0
+  targetState: 2
 --- !u!1 &626400470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,7 +3053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca028d1828a8d434982f36335b5cb8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetState: 0
+  targetState: 3
 --- !u!1 &718165744
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,7 +4303,7 @@ MonoBehaviour:
   sharedProfile: {fileID: 11400000, guid: c3b54077039609346be91b6a0bbe2780, type: 2}
   isGlobal: 1
   blendDistance: 0
-  weight: 0
+  weight: 1
   priority: 1
 --- !u!95 &1011819160
 Animator:
@@ -10683,12 +10683,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616648344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca028d1828a8d434982f36335b5cb8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetState: 0
+  targetState: 1
 --- !u!1 &1617538133
 GameObject:
   m_ObjectHideFlags: 0
@@ -11000,7 +11000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -11108,7 +11108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player_Ani: {fileID: 2068166399}
-  Bright: {fileID: 0}
+  Bright: {fileID: 1011819160}
 --- !u!1 &1653490219
 GameObject:
   m_ObjectHideFlags: 0
