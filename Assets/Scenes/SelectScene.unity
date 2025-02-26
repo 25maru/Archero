@@ -1389,6 +1389,8 @@ GameObject:
   - component: {fileID: 502892675}
   - component: {fileID: 502892677}
   - component: {fileID: 502892676}
+  - component: {fileID: 502892679}
+  - component: {fileID: 502892678}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -1443,6 +1445,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1630728766}
+--- !u!114 &502892678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502892674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff585e1ad29caea449dd47b7b969c676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dia: {fileID: 1261977702}
+  playerData: {fileID: 11400000, guid: 936149ec0ddc28040a745b47759a1942, type: 2}
+--- !u!114 &502892679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502892674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3bdebddeb89c3045b9fb2aa9f6e7ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gold: {fileID: 1845782724}
+  playerData: {fileID: 11400000, guid: 936149ec0ddc28040a745b47759a1942, type: 2}
 --- !u!1 &510324306
 GameObject:
   m_ObjectHideFlags: 0
@@ -5688,6 +5718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetState: 5
+  tiredManager: {fileID: 502892676}
 --- !u!1 &2074962474
 GameObject:
   m_ObjectHideFlags: 0

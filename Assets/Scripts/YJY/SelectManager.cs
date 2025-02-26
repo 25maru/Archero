@@ -5,7 +5,7 @@ using UnityEngine;
 public class SelectManager : MonoBehaviour
 {
     public static SelectManager Instance;
-    SelectState state;
+    public SelectState state;
     bool isChange = false;
     bool isFirst = true;
 
@@ -15,7 +15,6 @@ public class SelectManager : MonoBehaviour
     public GameObject NormalMap;
 
     public GameObject CurrentMap;
-    [SerializeField]GameObject child;
 
     public enum SelectState
     {
