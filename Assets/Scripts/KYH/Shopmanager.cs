@@ -27,7 +27,7 @@ public class ShopManager : MonoBehaviour
             newItem.transform.Find("ItemName").GetComponent<Text>().text = item.itemName;
             newItem.transform.Find("Price").GetComponent<Text>().text = item.price.ToString();
             newItem.transform.Find("Icon").GetComponent<Image>().sprite = item.itemIcon;
-
+            Debug.Log("아이템 생성됨: " + item.itemName);
             Button buyButton = newItem.transform.Find("BuyButton").GetComponent<Button>();
 
             // 아이템이 이미 구매되었으면 버튼 비활성화
@@ -74,5 +74,8 @@ public class ShopItem
     public string itemName;
     public Sprite itemIcon;
     public int price;
+    public int atk;
+    public int def;
+
 }
 
