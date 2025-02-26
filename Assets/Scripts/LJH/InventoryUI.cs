@@ -85,7 +85,6 @@ public class InventoryUI : MonoBehaviour
             if (i > items.Count)
                 listItem[i] = null;
 
-            listItem[i].sprite = items[i].ItemSprite.sprite;
         }
     }
 }
