@@ -55,7 +55,6 @@ public class GameManager : MonoSingleton<GameManager>
                 break;
 
             case GameState.Playing:
-                SceneLoader.Instance.LoadScene("PlayScene");
                 break;
 
             case GameState.Paused:

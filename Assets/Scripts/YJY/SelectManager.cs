@@ -5,7 +5,7 @@ using UnityEngine;
 public class SelectManager : MonoBehaviour
 {
     public static SelectManager Instance;
-    SelectState state;
+    public SelectState state;
     bool isChange = false;
     bool isFirst = true;
 

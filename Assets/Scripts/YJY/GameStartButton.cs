@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameStartButton : MonoBehaviour
 {
     [SerializeField] private GameManager.GameState targetState;
-    //[SerializeField] private SelectManager.SelectState selectState;
+    [SerializeField] private SelectManager.SelectState selectState;
     private Button button; // 버튼 컴포넌트
     public TiredManager tiredManager;
     bool isStart = false;
@@ -28,5 +28,13 @@ public class GameStartButton : MonoBehaviour
     void InvokeStartGame()
     {
         GameManager.Instance.ChangeState(targetState);
+        if (SelectManager.Instance.state == SelectManager.SelectState.Normal)
+        {
+            SceneLoader.Instance.LoadScene("PlayScene");
+        }
+        else if (SelectManager.Instance.state == SelectManager.SelectState.Tutorial)
+        {
+            SceneLoader.Instance.LoadScene("TutorialScene");
+        }
     }
 }
