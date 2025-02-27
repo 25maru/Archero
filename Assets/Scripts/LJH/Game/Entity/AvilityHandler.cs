@@ -10,6 +10,7 @@ public class AvilityHandler : MonoBehaviour
     [SerializeField] AbilityType type;
     Button button;
     PlayerStat playerStat;
+    LevelUpUI uiLevelUp;
 
     private void Start()
     {
@@ -18,6 +19,12 @@ public class AvilityHandler : MonoBehaviour
 
         button.onClick.AddListener(OnClickAvility);
     }
+
+    public void Init(LevelUpUI uiLevelUp)
+    {
+        this.uiLevelUp = uiLevelUp;
+    }
+
 
     private void OnClickAvility()
     {

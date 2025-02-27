@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class LevelUpUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Hide()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gameObject.SetActive(false);
     }
 }
