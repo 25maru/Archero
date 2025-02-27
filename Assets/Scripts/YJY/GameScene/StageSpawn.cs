@@ -52,10 +52,12 @@ public class StageSpawn : MonoBehaviour
                 if (SaveKey == "Tutorial") //10에서 튜토리얼 종료
                 {
                     gameManager.ChangeState(GameManager.GameState.MainMenu);
+                    return;
                 }
                 if(stage == 50)
                 {
                     gameManager.ChangeState(GameManager.GameState.MainMenu);
+                    return;
                 }
             }
 

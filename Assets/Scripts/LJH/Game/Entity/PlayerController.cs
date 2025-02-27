@@ -24,11 +24,6 @@ public class PlayerController : BaseController
             Attack();
             lastAttack = 0f;
         }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            ((PlayerStat)stat).GetExp(1);
-        }
     }
 
     void OnMove(InputValue inputValue)

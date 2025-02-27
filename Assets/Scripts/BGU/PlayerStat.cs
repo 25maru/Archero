@@ -46,6 +46,11 @@ public class PlayerStat : BaseStat
         PlaySceneManager.Instance.player.ChangeExpUI();
     }
 
+    public void GetGold(int gold)
+    {
+        baseData.Gold += gold;
+    }
+
     public override void TakeDamage(int damage)
     {
         GameData.HP -= damage;
@@ -92,7 +97,7 @@ public class PlayerStat : BaseStat
         return (baseData.MaxHP + +equipHealth) + GameData.MaxHP ;
     }
 
-    public int GetCurrentExp()
+    public override int GetCurrentExp()
     {
         return GameData.exp;
     }

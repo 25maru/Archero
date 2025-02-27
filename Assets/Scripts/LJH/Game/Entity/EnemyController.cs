@@ -42,10 +42,20 @@ public class EnemyController : BaseController
 
             if (!isCoroutine)
             {
+                // 사망 모션 구현
                 isCoroutine = true;
                 anim.SetBool("IsDead", true);
                 StartCoroutine(FadeoutAnim());
+
+                // 경험치 구슬 생성
+                int rand = Random.Range(1, 5);
+                for (int i = 0; i < rand; i++)
+                {
+                    GameObject newInstance = Instantiate(PlaySceneManager.Instance.expOrb, transform.position, Quaternion.identity);
+                    newInstance.GetComponent<ExpOrbController>().Init(stat.GetGold(), stat.GetCurrentExp());
+                }
             }
+
             return;
         }
 

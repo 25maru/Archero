@@ -27,15 +27,15 @@ public class GameStartButton : MonoBehaviour
 
     void InvokeStartGame()
     {
-        PlayerPrefs.DeleteAll();
-
         GameManager.Instance.ChangeState(targetState);
         if (SelectManager.Instance.state == SelectManager.SelectState.Normal)
         {
+            PlayerPrefs.DeleteKey("NormalStage");
             SceneLoader.Instance.LoadScene("PlayScene");
         }
         else if (SelectManager.Instance.state == SelectManager.SelectState.Tutorial)
         {
+            PlayerPrefs.DeleteKey("TutorialStage");
             SceneLoader.Instance.LoadScene("TutorialScene");
         }
     }

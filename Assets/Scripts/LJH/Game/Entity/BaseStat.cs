@@ -105,5 +105,15 @@ public class BaseStat : MonoBehaviour
         return baseData.projectileReflection;
     }
 
+    public virtual int GetGold()
+    {
+        return baseData.Gold;
+    }
+
+    public virtual int GetCurrentExp()
+    {
+        return baseData.exp;
+    }
+
     #endregion
 }
