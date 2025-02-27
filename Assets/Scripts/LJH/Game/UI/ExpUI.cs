@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExpUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Slider slider;
+    TextMeshProUGUI textLevel;
+
+    private void Start()
     {
-        
+        slider = GetComponentInChildren<Slider>();
+        textLevel = GetComponentInChildren<TextMeshProUGUI>();
+
+        slider.value = 0;
+        textLevel.text = "Lv. 1";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdatExp(float exp, float maxExp, int level)
     {
-        
+        slider.value = exp / maxExp;
+        textLevel.text = $"Lv. {level}";
     }
 }
