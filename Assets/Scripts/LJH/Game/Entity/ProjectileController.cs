@@ -106,6 +106,7 @@ public class ProjectileController : MonoBehaviour
 
     public void CreatePaticle(Vector3 position)
     {
+
         // 지정된 위치에 파티클 생성
         GameObject particleInstance = Instantiate(impactParticleSystem, position, Quaternion.identity);
 
@@ -120,5 +121,8 @@ public class ProjectileController : MonoBehaviour
         mainModule.startSpeedMultiplier = 10f;
 
         paticle.Play();
+
+        // 파티클 시스템 끝난 후 파괴
+        Destroy(particleInstance, paticle.main.duration);
     }
 }
