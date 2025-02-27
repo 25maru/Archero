@@ -14,7 +14,6 @@ public class BossAttack : MonoBehaviour
     public BaseStat BossStat;
 
     float Attackturn = 5f;
-    float time = 0;
     int AttackNum = 7;
     bool isChange = false;
 
