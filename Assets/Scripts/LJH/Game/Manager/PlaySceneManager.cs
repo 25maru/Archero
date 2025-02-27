@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameSceneManager : MonoBehaviour
+public class PlaySceneManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private static PlaySceneManager instance;
+    public static PlaySceneManager Instance { get { return instance; } }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public PlayerController player;
 }
