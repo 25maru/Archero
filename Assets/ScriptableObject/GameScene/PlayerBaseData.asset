@@ -10,14 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37d2078a6ac58654c96a9e59a4861469, type: 3}
-  m_Name: PlayerData
+  m_Name: PlayerBaseData
   m_EditorClassIdentifier: 
   Name: Test
   HP: 100
   MaxHP: 100
   IsDead: 0
+  level: 0
+  exp: 0
   Gold: 0
   Diamond: 0
   speed: 3
   attackDamage: 3
-  attackSpeed: 3
+  attackSpeed: 1
+  projectileNum: 1
+  projectilePierce: 1
+  projectileReflection: 0

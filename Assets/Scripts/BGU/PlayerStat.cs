@@ -1,41 +1,104 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerStat : MonoBehaviour
+public class PlayerStat : BaseStat
 {
-    public PlayerData playerData;
+    public PlayerData GameData;
+    InventoryHandler invenHandler;
 
-    void Start()
+    protected override void Start()
     {
-        playerData.HP = playerData.MaxHP;
+        invenHandler = GetComponent<InventoryHandler>();
     }
 
-    public void TakeDamage(int damage)
+    public void FullHealth()
     {
-        playerData.HP -= damage;
+        GameData.HP = GetMaxHealth();
+    }
 
-        if (playerData.HP < 0)
+    public void GetExp(int exp)
+    {
+        GameData.exp += exp;
+
+        if (GameData.exp < GameData.maxExp) 
         {
-            playerData.HP = 0;
-            playerData.IsDead = true;
+            GameData.level++;
+            GameData.exp = 0;
+
+            // 레벨업시 필요 경험치 증가
+            GameData.maxExp = (int)Mathf.Ceil(GameData.maxExp * 1.2f);
+        }
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        GameData.HP -= damage;
+
+        if (GameData.HP < 0)
+        {
+            GameData.HP = 0;
+            dead = true;
             Die();
         }
     }
 
-    public void Heal(int amount)
+    public override void Heal(int amount)
     {
-        if (playerData.IsDead) return; // 죽었으면 회복 불가
+        if (GameData.IsDead) return; // 죽었으면 회복 불가
 
-        playerData.HP += amount;
-        if (playerData.HP > playerData.MaxHP)
+        BaseData.HP += amount;
+        if (GameData.HP > GetMaxHealth())
         {
-            playerData.HP = playerData.MaxHP;
+            GameData.HP = GetMaxHealth();
         }
     }
 
-    public void Die()
+    #region Get Stat Func
+
+    public override float GetAttackDamage()
     {
-        Debug.Log("캐릭터가 사망했습니다.");
+        float equipDamage = invenHandler.GetEquipAvility_Attack();
+
+        return BaseData.AttackDamage + GameData.AttackDamage + equipDamage;
     }
+
+    public override int GetCurrentHealth()
+    {
+        return GameData.HP;
+    }
+
+    public override int GetMaxHealth()
+    {
+        int equipHealth = (int)invenHandler.GetEquipAvility_Health();
+
+        return BaseData.MaxHP + GameData.MaxHP + equipHealth;
+    }
+
+    public override float GetSpeed()
+    {
+        return BaseData.Speed * GameData.Speed;
+    }
+
+    public override float GetAttackSpeed()
+    {
+        return BaseData.AttackSpeed * GameData.AttackSpeed;
+    }
+
+    public override int GetProjectileNum()
+    {
+        return BaseData.projectileNum + GameData.projectileNum;
+    }
+
+    public override int GetProjectilePierce()
+    {
+        return BaseData.projectilePierce + GameData.projectilePierce;
+    }
+
+    public override int GetMaxProjectileReflection()
+    {
+        return BaseData.projectileReflection + GameData.projectileReflection;
+    }
+    #endregion
 }

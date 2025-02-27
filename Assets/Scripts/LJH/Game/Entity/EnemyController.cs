@@ -4,21 +4,34 @@ using UnityEngine;
 
 public class EnemyController : BaseController
 {
-    [SerializeField] Transform target;
-
     [Header("Range Info")]
     [SerializeField] private float followRange = 10f;
     [SerializeField] private float AttackRange = 5f;
     [SerializeField] private Color gizmoFollowColor = new Color(1, 0, 0, 1f);
     [SerializeField] private Color gizmoAttackwColor = new Color(0, 0, 1, 1f);
+    [SerializeField] float offsetAttackDis = 1f; // 발사 방향 앞쪽으로 옮기는 오프셋
+
+    PlayerController target;
+
+    protected override void Start()
+    {
+        base.Start();
+
+        target = FindAnyObjectByType<PlayerController>();
+    }
 
     private void Update()
     {
+        lastAttack += Time.deltaTime;
+
         FindTartget();
     }
 
     private void FindTartget()
     {
+        if (target.GetComponent<BaseStat>().IsDead())
+            return;
+
         moveDir = Vector2.zero; // 방향 초기화
         Vector3 dir = target.transform.position - transform.position;
         float distance = dir.magnitude;
@@ -28,13 +41,34 @@ public class EnemyController : BaseController
             if (distance < AttackRange) // 타겟이 공격범위 안에 있을 경우
             {
                 // 공격
-                Attack();
+                if (stat.GetAttackSpeed() < lastAttack)
+                {
+                    Attack();
+                    lastAttack = 0f;
+                }
 
                 moveDir = Vector2.zero;
                 return;
             }
 
             moveDir = dir.normalized;
+        }
+    }
+
+    protected override void Attack()
+    {
+        base.Attack();
+
+        {
+            // 투사체 이동 방향
+            ProjectileDir = (target.transform.position - transform.position).normalized;
+
+            ProjectileController newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+
+            // 투사체 생성 위치
+            Vector3 createPos = transform.position + (ProjectileDir * offsetAttackDis);
+
+            newProjectile.Init(this, createPos, ProjectileDir, "Player");
         }
     }
 
