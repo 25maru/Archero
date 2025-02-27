@@ -13,23 +13,18 @@ public class LevelUpUI : MonoBehaviour
     // 랜덤으로 능력치 상승 선택지 3개 선택
     private void SetRandomAbility()
     {
-        int[] rand = new int[3];
-        int idx = 0;
+        List<int> rand = new List<int>();
 
         while (true)
         {
-            if (idx >= 3)
-                break;
+            int temp = Random.Range(0, listAbility.Count - 1);
 
-            rand[idx] = Random.Range(0, listAbility.Count - 1);
+            if (rand.Contains(temp))
+                continue;
 
-            if (idx != 0)
-            {
-                if (rand[idx - 1].Equals(rand[idx]))
-                    continue;
-            }
+            rand.Add(temp);
 
-            idx++;
+            if (rand.Count == 3) break;
         }
 
         foreach (int i in rand)
