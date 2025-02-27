@@ -25,11 +25,6 @@ public class ProjectileController : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         // 투사체 이동
@@ -43,10 +38,11 @@ public class ProjectileController : MonoBehaviour
             BaseStat sourceStat = sourceObject.GetComponent<BaseStat>();
             BaseStat targetStat = collision.gameObject.GetComponent<BaseStat>();
 
+            // 데미지 받음
             targetStat.TakeDamage((int)sourceStat.GetAttackDamage());
 
             // 화살 관통 처리
-            if (pierceNum <= 0) 
+            if (pierceNum <= 0)
             {
                 DestroyProjectile();
             }

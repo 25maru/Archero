@@ -6,8 +6,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : BaseController
 {
     [SerializeField] GameObject enemyPool;
-    [SerializeField] GameObject Map;
     [SerializeField] float offsetAttackDis = 1f; // 발사 방향 앞쪽으로 옮기는 오프셋
+
+    [Header("UI Info")]
+    [SerializeField] HealthUI uiHealth;
+    [SerializeField] ExpUI uiExp;
+    [SerializeField] LevelUpUI uiLevelUp;
 
     private void Update()
     {
@@ -19,6 +23,11 @@ public class PlayerController : BaseController
         {
             Attack();
             lastAttack = 0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ((PlayerStat)stat).GetExp(1);
         }
     }
 
@@ -79,5 +88,21 @@ public class PlayerController : BaseController
 
             newProjectile.GetComponent<ProjectileController>().Init(this, createPos, ProjectileDir, "Enemy");
         }
+    }
+
+    public void ChangeHealthUI()
+    {
+        uiHealth.UpdateHealth(stat.GetCurrentHealth(), stat.GetMaxHealth());
+    }
+
+    public void ShowLevelUpUI()
+    {
+        uiLevelUp.Show();
+    }
+
+    public void ChangeExpUI()
+    {
+        PlayerStat playerStat = (PlayerStat)stat;
+        uiExp.UpdatExp(playerStat.GetCurrentExp(), playerStat.GetMaxExp(), playerStat.GetLevel());
     }
 }

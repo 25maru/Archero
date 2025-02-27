@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class FollowUI : MonoBehaviour
+public class HealthUI : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    Slider slider;
 
-    RectTransform rect;
-
-    private void Awake()
+    private void Start()
     {
-        rect = GetComponent<RectTransform>();
+        slider = GetComponentInChildren<Slider>();
+
+        slider.value = 1;
     }
 
-    private void FixedUpdate()
+    public void UpdateHealth(float hp, float maxHp)
     {
-        rect.position = player.transform.position;
+        slider.value = hp / maxHp;
     }
 }

@@ -52,8 +52,8 @@ public class InventoryUI : MonoBehaviour
         textGold.text = playerData.Gold.ToString();
         textDiamond.text = playerData.Diamond.ToString();
         textName.text = playerData.Name;
-        textHealth.text = ((int)(playerData.MaxHP + InventoryManager.Instance.InventoryHandler.GetEquipAvility_Health())).ToString();
-        textAttack.text = ((int)(playerData.AttackDamage + InventoryManager.Instance.InventoryHandler.GetEquipAvility_Attack())).ToString();
+        textHealth.text = ((int)(playerData.MaxHP + InventoryManager.Instance.InventoryHandler.GetEquipAbility_Health())).ToString();
+        textAttack.text = ((int)(playerData.AttackDamage + InventoryManager.Instance.InventoryHandler.GetEquipAbility_Attack())).ToString();
     }
 
     #region Update UIText

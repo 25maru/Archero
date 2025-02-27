@@ -37,7 +37,7 @@ public class InventoryHandler : MonoBehaviour
     }
 
     // 장착 중인 장비의 총 공격력 가져오기
-    public float GetEquipAvility_Attack() 
+    public float GetEquipAbility_Attack() 
     {
         float total = 0;
         
@@ -58,7 +58,7 @@ public class InventoryHandler : MonoBehaviour
     }
 
     // 장착 중인 장비의 총 체력 가져오기
-    public float GetEquipAvility_Health() 
+    public float GetEquipAbility_Health() 
     {
         float total = 0;
 

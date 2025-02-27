@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: PlayerGameData
   m_EditorClassIdentifier: 
   Name: Test
-  HP: 70
-  MaxHP: 0
+  HP: 20
+  MaxHP: 1
   IsDead: 0
-  level: 0
+  level: 8
   exp: 0
+  maxExp: 22
   Gold: 0
   Diamond: 0
   speed: 1
-  attackDamage: 1
-  attackSpeed: 1
+  attackDamage: 1.1
+  attackSpeed: 0.79999995
   projectileNum: 0
   projectilePierce: 0
   projectileReflection: 0
