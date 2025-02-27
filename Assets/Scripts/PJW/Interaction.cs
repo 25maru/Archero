@@ -4,18 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[Serializable]
-public class SpriteChanger
-{
-    public SpriteRenderer spriteRenderer;
-    public Sprite sprite;
-
-    public void ApplySprite()
-    {
-        spriteRenderer.sprite = sprite;
-    }
-}
-
 public class Interaction : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
@@ -25,7 +13,7 @@ public class Interaction : MonoBehaviour
     [SerializeField] private float feedbackDuration = 0.1f;
 
     [Space(5f)]
-    [SerializeField] private List<SpriteChanger> sprites;
+    // [SerializeField] private List<SpriteChanger> sprites;
     [SerializeField] private List<AudioClip> audioClips;
     [SerializeField] private bool disableCollider;
     [SerializeField] private GameObject popupUI;
@@ -102,10 +90,10 @@ public class Interaction : MonoBehaviour
             SceneManager.LoadScene(sceneName);
         }
 
-        foreach (SpriteChanger sprite in sprites)
-        {
-            sprite.ApplySprite();
-        }
+        // foreach (SpriteChanger sprite in sprites)
+        // {
+        //     sprite.ApplySprite();
+        // }
 
         if (disableCollider)
         {

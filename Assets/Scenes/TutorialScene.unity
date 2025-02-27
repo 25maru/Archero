@@ -2288,8 +2288,10 @@ MonoBehaviour:
   projectile: {fileID: 6842618479569418147, guid: 2f8a588938255f6418787a509cd1d8a9, type: 3}
   projectileSpacing: 5
   enemyPool: {fileID: 212325171}
-  Map: {fileID: 1502336017}
   offsetAttackDis: 1
+  uiHealth: {fileID: 0}
+  uiExp: {fileID: 0}
+  uiLevelUp: {fileID: 0}
 --- !u!114 &802063981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2644,7 +2646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9997b5a8d6940ce45bffc6bb9a861298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 802063978}
 --- !u!1 &912517899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,16 +2789,6 @@ PrefabInstance:
 --- !u!4 &1035613997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2055102311959635375, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
-  m_PrefabInstance: {fileID: 1035613996}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1035613998 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2055102312182832480, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
-  m_PrefabInstance: {fileID: 1035613996}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1035613999 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2055102311959635368, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
   m_PrefabInstance: {fileID: 1035613996}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1148664114
@@ -8428,47 +8419,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6644944589867386884, guid: 4be821d0b78ad5043985b57b738e951b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1035613997}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6644944589867386885, guid: 4be821d0b78ad5043985b57b738e951b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1841098702}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4be821d0b78ad5043985b57b738e951b, type: 3}
 --- !u!4 &1841098700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6644944589867386884, guid: 4be821d0b78ad5043985b57b738e951b, type: 3}
   m_PrefabInstance: {fileID: 1841098699}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1841098701 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6644944589867386885, guid: 4be821d0b78ad5043985b57b738e951b, type: 3}
-  m_PrefabInstance: {fileID: 1841098699}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1841098702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841098701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a0172fc27b941d4da3b7210ee80c9ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasGroup: {fileID: 0}
-  interactHint: {fileID: 0}
-  offset: -25
-  duration: 0.4
-  feedbackDuration: 0.1
-  sprites:
-  - spriteRenderer: {fileID: 1035613999}
-    sprite: {fileID: 21300160, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
-  - spriteRenderer: {fileID: 1035613998}
-    sprite: {fileID: 21300100, guid: ed7554aeefd5da44a9fe1ee9b93afe77, type: 3}
-  audioClips: []
-  disableCollider: 1
-  popupUI: {fileID: 0}
-  sceneName: 
 --- !u!1 &1855636040
 GameObject:
   m_ObjectHideFlags: 0
