@@ -16,24 +16,24 @@ public class StatData : ScriptableObject
     public int Gold;                                           // 골드
     public int Diamond;                                        // 다이아몬드
 
-    [Range(1, 20)][SerializeField] private float speed = 10;      // 캐릭터 속도
+    [Range(0, 20)][SerializeField] private float speed = 10;      // 캐릭터 속도
     public float Speed
     {
         get { return speed; }
-        set { speed = Mathf.Clamp(value, 1, 20); }             // 값이 1~20 범위를 벗어나지 않도록 제한
+        set { speed = Mathf.Clamp(value, 0, 20); }             // 값이 1~20 범위를 벗어나지 않도록 제한
     }
 
-    [Range(1, 5)][SerializeField] private float attackDamage = 3; // 캐릭터 공격력
+    [Range(0, 5)][SerializeField] private float attackDamage = 3; // 캐릭터 공격력
     public float AttackDamage
     {
         get { return attackDamage; }
-        set { attackDamage = Mathf.Clamp(value, 1, 5); }       // 값이 1~5 범위를 벗어나지 않도록 제한
+        set { attackDamage = Mathf.Clamp(value, 0, 5); }       // 값이 1~5 범위를 벗어나지 않도록 제한
     }
-    [Range(1, 5)][SerializeField] private float attackSpeed = 3;  // 공격 속도
+    [Range(0, 5)][SerializeField] private float attackSpeed = 3;  // 공격 속도
     public float AttackSpeed
     {
         get { return attackSpeed; }
-        set { attackSpeed = Mathf.Clamp(value, 1, 5); }        // 값이 1~5 범위를 벗어나지 않도록 제한
+        set { attackSpeed = Mathf.Clamp(value, 0, 5); }        // 값이 1~5 범위를 벗어나지 않도록 제한
     }
 
     [Header("Projectile Info")]
