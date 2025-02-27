@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class BossAttack : MonoBehaviour
@@ -11,11 +12,29 @@ public class BossAttack : MonoBehaviour
     public BaseStat BossStat;
 
     float Attackturn = 10f;
+    float time = 0;
     int AttackNum = 5;
+    bool isChange = false;
+
+    public List<GameObject> NormalAttack;
+    public List<GameObject> ChangeAttack;
+
+    private void Start()
+    {
+        InvokeRepeating(nameof(Attack), 0, Attackturn);
+    }
 
     private void Update()
     {
-        Attack();
+        if(BossStat.dead == true && isChange == false)
+        {
+            isChange = true;
+            BossAnimator.SetBool("IsChange", true);
+            CancelInvoke(nameof(Attack));
+            Attackturn = 6f;
+            int AttackNum = 7;
+            InvokeRepeating(nameof(Attack), 0, Attackturn);
+        }
     }
 
     void Attack()
