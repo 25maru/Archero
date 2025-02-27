@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate
       objectReference: {fileID: 0}
+    - target: {fileID: 6644944589867386885, guid: 4be821d0b78ad5043985b57b738e951b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1557,6 +1561,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2055102311959635375, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
   m_PrefabInstance: {fileID: 212287123}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &212287125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8595965009721191091, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+  m_PrefabInstance: {fileID: 212287123}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c1646c9dcc51a4e8234da7cd8822a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &354628380
 GameObject:
   m_ObjectHideFlags: 0
@@ -9659,6 +9674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate_Back
       objectReference: {fileID: 0}
+    - target: {fileID: 6644944589867386885, guid: 4be821d0b78ad5043985b57b738e951b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10328,6 +10347,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1779899699894894805, guid: 18dc50678c4500f4293834ffe0830856, type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 212287125}
     - target: {fileID: 7840052068021865638, guid: 18dc50678c4500f4293834ffe0830856, type: 3}
       propertyPath: m_Name
       value: Goblin
