@@ -23,7 +23,7 @@ MonoBehaviour:
   Diamond: 0
   speed: 1
   attackDamage: 3
-  attackSpeed: 3
+  attackSpeed: 2.1
   projectileNum: 1
   projectilePierce: 0
   projectileReflection: 0
