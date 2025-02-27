@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class BaseStat : MonoBehaviour
 {
-    [SerializeField] protected PlayerData BaseData;
+    [SerializeField] protected StatData baseData;
 
     // 초기화되야 하는 스탯변수
     protected int health;
@@ -14,7 +14,7 @@ public class BaseStat : MonoBehaviour
     
     protected virtual void Start()
     {
-        health = BaseData.MaxHP;
+        health = baseData.MaxHP;
     }
 
     public virtual void TakeDamage(int damage)
@@ -34,9 +34,9 @@ public class BaseStat : MonoBehaviour
         if (dead) return; // 죽었으면 회복 불가
 
         health += amount;
-        if (health > BaseData.MaxHP)
+        if (health > baseData.MaxHP)
         {
-            health = BaseData.MaxHP;
+            health = baseData.MaxHP;
         }
     }
 
@@ -54,7 +54,7 @@ public class BaseStat : MonoBehaviour
 
     public virtual float GetAttackDamage()
     {
-        return BaseData.AttackDamage;
+        return baseData.AttackDamage;
     }
 
     public virtual int GetCurrentHealth()
@@ -64,32 +64,32 @@ public class BaseStat : MonoBehaviour
 
     public virtual int GetMaxHealth()
     {
-        return BaseData.MaxHP;
+        return baseData.MaxHP;
     }
 
     public virtual float GetSpeed()
     {
-        return BaseData.Speed;
+        return baseData.Speed;
     }
 
     public virtual float GetAttackSpeed()
     {
-        return BaseData.AttackSpeed;
+        return baseData.AttackSpeed;
     }
 
     public virtual int GetProjectileNum()
     {
-        return BaseData.projectileNum;
+        return baseData.projectileNum;
     }
 
     public virtual int GetProjectilePierce()
     {
-        return BaseData.projectilePierce;
+        return baseData.projectilePierce;
     }
 
     public virtual int GetMaxProjectileReflection() 
     {
-        return BaseData.projectileReflection;
+        return baseData.projectileReflection;
     }
 
     #endregion

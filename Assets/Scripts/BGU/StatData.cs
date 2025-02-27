@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerData", menuName = "Game Data/Player Data")]
-public class PlayerData : ScriptableObject
+public class StatData : ScriptableObject
 {
     [Header("Stat Info")]
     public string Name = "Test";                               // 플레이어 이름

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerStat : BaseStat
 {
-    public PlayerData GameData;
+    public StatData GameData;
     InventoryHandler invenHandler;
 
     protected override void Start()
@@ -48,7 +48,7 @@ public class PlayerStat : BaseStat
     {
         if (GameData.IsDead) return; // 죽었으면 회복 불가
 
-        BaseData.HP += amount;
+        baseData.HP += amount;
         if (GameData.HP > GetMaxHealth())
         {
             GameData.HP = GetMaxHealth();
@@ -61,7 +61,7 @@ public class PlayerStat : BaseStat
     {
         float equipDamage = invenHandler.GetEquipAvility_Attack();
 
-        return BaseData.AttackDamage + GameData.AttackDamage + equipDamage;
+        return (baseData.AttackDamage + equipDamage) * GameData.AttackDamage;
     }
 
     public override int GetCurrentHealth()
@@ -73,32 +73,59 @@ public class PlayerStat : BaseStat
     {
         int equipHealth = (int)invenHandler.GetEquipAvility_Health();
 
-        return BaseData.MaxHP + GameData.MaxHP + equipHealth;
+        return (baseData.MaxHP + +equipHealth) * GameData.MaxHP ;
     }
 
     public override float GetSpeed()
     {
-        return BaseData.Speed * GameData.Speed;
+        return baseData.Speed * GameData.Speed;
     }
 
     public override float GetAttackSpeed()
     {
-        return BaseData.AttackSpeed * GameData.AttackSpeed;
+        return baseData.AttackSpeed * GameData.AttackSpeed;
     }
 
     public override int GetProjectileNum()
     {
-        return BaseData.projectileNum + GameData.projectileNum;
+        return baseData.projectileNum + GameData.projectileNum;
     }
 
     public override int GetProjectilePierce()
     {
-        return BaseData.projectilePierce + GameData.projectilePierce;
+        return baseData.projectilePierce + GameData.projectilePierce;
     }
 
     public override int GetMaxProjectileReflection()
     {
-        return BaseData.projectileReflection + GameData.projectileReflection;
+        return baseData.projectileReflection + GameData.projectileReflection;
+    }
+    #endregion
+
+    #region Set Stat Func
+    public void SetAttackDamage(float damage)
+    {
+        GameData.AttackDamage += damage;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        GameData.Speed += speed;
+    }
+
+    public void SetProjectileNum(int num)
+    {
+        GameData.projectileNum += num;
+    }
+
+    public void SetProjectilePierce()
+    {
+        GameData.projectilePierce += GameData.projectilePierce;
+    }
+
+    public void SetProjectileReflection()
+    {
+        GameData.projectileReflection += GameData.projectileReflection;
     }
     #endregion
 }
