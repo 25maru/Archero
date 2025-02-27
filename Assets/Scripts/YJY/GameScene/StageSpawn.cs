@@ -12,9 +12,12 @@ public class StageSpawn : MonoBehaviour
     public string SaveKey;
     int stage;
     GameObject thisStage;
+    GameManager gameManager;
 
     private void Awake()
     {
+        gameManager = GameManager.Instance;
+
         if (PlayerPrefs.HasKey(SaveKey+"Stage"))
         {
             stage = PlayerPrefs.GetInt(SaveKey + "Stage");
@@ -42,7 +45,22 @@ public class StageSpawn : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            if (stage % 10 == 0) //10씩일 시
+            {
+                PlayerPrefs.SetInt(SaveKey, stage); //스테이지 저장
+
+                if (SaveKey == "Tutorial") //10에서 튜토리얼 종료
+                {
+                    gameManager.ChangeState(GameManager.GameState.MainMenu);
+                }
+                if(stage == 50)
+                {
+                    gameManager.ChangeState(GameManager.GameState.MainMenu);
+                }
+            }
+
             PlayerPrefs.SetInt(SaveKey + "Stage", stage+1);
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
