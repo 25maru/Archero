@@ -2856,6 +2856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseData: {fileID: 11400000, guid: a3ae2aecf8d67c643a44d41bbdf10b1b, type: 2}
+  DeathPanel: {fileID: 0}
   dead: 0
   GameData: {fileID: 11400000, guid: 15380bf2cb4039c42b1dd402515b4350, type: 2}
 --- !u!114 &802063980
@@ -10308,6 +10309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 802063980}
   gate: {fileID: 1035613998}
+  expOrb: {fileID: 7771735707744516878, guid: 97bdb1baafa70f840aad01e04e2e9d90, type: 3}
 --- !u!114 &1859726135
 MonoBehaviour:
   m_ObjectHideFlags: 0
