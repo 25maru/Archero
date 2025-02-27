@@ -30,9 +30,12 @@ public class StageSpawn : MonoBehaviour
 
     private void Start()
     {
-        if (Stages[stage - 1] != null)
+        int now = stage % 10;
+        if (now == 0) { now = 10; }
+
+        if (Stages[now - 1] != null)
         {
-            thisStage = Stages[stage - 1];
+            thisStage = Stages[now - 1];
         }
         else
         {
