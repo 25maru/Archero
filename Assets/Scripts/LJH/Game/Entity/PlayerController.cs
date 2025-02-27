@@ -7,9 +7,7 @@ public class PlayerController : BaseController
 {
     [SerializeField] GameObject enemyPool;
     [SerializeField] GameObject Map;
-
-    float lastAttack = float.MaxValue;
-    Vector3 attackDir = Vector3.zero;
+    [SerializeField] float offsetAttackDis = 1f; // 발사 방향 앞쪽으로 옮기는 오프셋
 
     private void Update()
     {
@@ -17,10 +15,10 @@ public class PlayerController : BaseController
 
         lastAttack += Time.deltaTime;
         // 멈춰있을 때 공격
-        if (moveDir.magnitude <= 0 && attackDelay < lastAttack)
+        if (moveDir.magnitude <= 0 && stat.GetAttackSpeed() < lastAttack)
         {
             Attack();
-            lastAttack = 0;
+            lastAttack = 0f;
         }
     }
 
@@ -38,7 +36,7 @@ public class PlayerController : BaseController
         foreach (BaseController enemy in enemies)
         {
             // 적이 죽었다면 넘김
-            if (enemy.GetComponent<PlayerStat>().playerData.IsDead)
+            if (enemy.GetComponent<BaseStat>().IsDead())
                 continue;
 
             // 플레이어와 적의 사이 거리를 구함
@@ -55,34 +53,31 @@ public class PlayerController : BaseController
         }
 
         // 가까운 적의 방향 정규화
-        attackDir = closeDir.normalized;
+        ProjectileDir = closeDir.normalized;
     }
 
     protected override void Attack()
     {
-        if (attackDir == Vector3.zero)
+        if (ProjectileDir == Vector3.zero)
             return;
 
         base.Attack();
 
         // 노말 벡터 구하기
-        Vector3 vecNormal = new Vector3(-attackDir.y, attackDir.x, 0); 
+        Vector3 vecNormal = new Vector3(-ProjectileDir.y, ProjectileDir.x, 0); 
 
-        for (int i = 0; i < projectileNum; i++)
+        for (int i = 0; i < stat.GetProjectileNum(); i++)
         {
-            ProjectileController newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+            GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+
 
             // 투사체 간격 오프셋
-            float offset = (i - (projectileNum - 1) / 2) * projectileSpacing;
+            float Spacing = (i - (stat.GetProjectileNum() - 1) / 2) * projectileSpacing;
 
             // 투사체 생성 위치
-            Vector3 createPos = transform.position + (vecNormal * offset);
+            Vector3 createPos = transform.position + (vecNormal * Spacing) + (ProjectileDir * offsetAttackDis);
 
-            // 투사체 방향
-            //Vector3 dir = attackDir + (vecNormalAttack * offset);
-            //dir = dir.normalized;
-
-            newProjectile.Init(this, createPos, attackDir, "Enemy", "Wall");
+            newProjectile.GetComponent<ProjectileController>().Init(this, createPos, ProjectileDir, "Enemy");
         }
     }
 }

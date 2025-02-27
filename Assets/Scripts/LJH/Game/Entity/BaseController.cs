@@ -6,27 +6,29 @@ using UnityEngine;
 public abstract class BaseController : MonoBehaviour
 {
     [Header("Projectile Info")]
-    [SerializeField] protected ProjectileController projectile;
-    [SerializeField] protected int projectileNum = 1;
-    [SerializeField] protected float projectileSpacing = 5f;
-    [SerializeField] protected float attackDelay = 1.5f;
+    [SerializeField] protected GameObject projectile;
+    [SerializeField] protected float projectileSpacing = 0.2f;
 
     protected Rigidbody2D rigid;
     protected SpriteRenderer spriteRender;
     protected Animator anim;
-    protected PlayerStat stat;
+    protected BaseStat stat;
 
     protected Vector2 moveDir = Vector2.zero;
     protected readonly int DirX = Animator.StringToHash("DirX");
     protected readonly int DirY = Animator.StringToHash("DirY");
     protected readonly int IsMove = Animator.StringToHash("IsMove");
 
+    protected float lastAttack = float.MaxValue;
+    protected Vector3 ProjectileDir = Vector3.zero;
+
+
     protected virtual void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRender = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        stat = GetComponent<PlayerStat>();
+        stat = GetComponent<BaseStat>();
     }
 
     protected virtual void FixedUpdate()
@@ -41,7 +43,7 @@ public abstract class BaseController : MonoBehaviour
 
     private void Movement(Vector2 direction)
     {
-        direction = direction * stat.playerData.Speed;
+        direction = direction * stat.GetSpeed();
         
         rigid.velocity = direction;
 

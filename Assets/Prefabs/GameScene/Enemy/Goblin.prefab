@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2859332052243573216}
   - component: {fileID: 328975183925421117}
   - component: {fileID: 408483884749177425}
-  - component: {fileID: 5542096167057970293}
   - component: {fileID: 1779899699894894805}
+  - component: {fileID: 8090132493374507810}
   m_Layer: 7
   m_Name: Goblin
   m_TagString: Enemy
@@ -182,19 +182,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5542096167057970293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7840052068021865638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 810f5eea2ce136b45b2bc7df8c86f62d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 1500eb44323034e4b97cb88f51cb2f14, type: 2}
 --- !u!114 &1779899699894894805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,12 +194,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb98b9866a75087478e948e828bb08b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  projectileNum: 1
-  projectileSpacing: 5
-  attackDelay: 1.5
-  target: {fileID: 0}
+  projectile: {fileID: 6842618479569418147, guid: 255cc157d2a529145bd10533a55297be, type: 3}
+  projectileSpacing: 0.2
   followRange: 10
   AttackRange: 5
   gizmoFollowColor: {r: 1, g: 0, b: 0, a: 1}
   gizmoAttackwColor: {r: 0, g: 0, b: 1, a: 1}
+  offsetAttackDis: 1
+--- !u!114 &8090132493374507810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840052068021865638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e5bbb183b12d843b555be79ad7d88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseData: {fileID: 11400000, guid: 1500eb44323034e4b97cb88f51cb2f14, type: 2}
