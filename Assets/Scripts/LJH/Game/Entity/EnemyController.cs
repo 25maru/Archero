@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : BaseController
@@ -12,19 +13,65 @@ public class EnemyController : BaseController
     [SerializeField] float offsetAttackDis = 1f; // 발사 방향 앞쪽으로 옮기는 오프셋
 
     PlayerController target;
+    bool isCoroutine = false;
+    float timeDead;
+    public Gate gate;           // gate 오브젝트 연결
 
+    public static List<EnemyController> enemies = new List<EnemyController>();      // 적 리스트 저장할 변수
+    
     protected override void Start()
     {
         base.Start();
 
         target = PlaySceneManager.Instance.player;
+        enemies.Add(this);      // 적이 생성될 때 리스트 추가
     }
 
     private void Update()
     {
-        lastAttack += Time.deltaTime;
+        if (stat.IsDead())
+        {
+            if (!isCoroutine)
+            {
+                isCoroutine = true;
+                anim.SetBool("IsDead", true);
+                StartCoroutine(FadeoutAnim());
+            }
+            return;
+        }
 
+        lastAttack += Time.deltaTime;
         FindTartget();
+
+        // 적 사망했는지 확인 후 모든 적 사망 시 게이트 오픈
+        if (stat.IsDead())
+        {
+            enemies.Remove(this);   // 적 사망시 리스트 제거
+
+            if(enemies.Count == 0 && gate != null)      // 모든 적이 사망했고 게이트 연결되어 있을 시
+            {
+                gate.Open();
+            }
+        }
+    }
+
+    private IEnumerator FadeoutAnim()
+    {
+        while (true)
+        {
+            timeDead += Time.deltaTime / 5f;
+
+            Color color = spriteRender.color;
+            color.a = Mathf.Lerp(color.a, 0, timeDead);
+            spriteRender.color = color;
+
+            if (color.a <= 0)
+                break;
+
+            yield return null;
+        }
+
+        Destroy(gameObject);
     }
 
     private void FindTartget()
