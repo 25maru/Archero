@@ -7,8 +7,12 @@ public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private GameObject impactParticleSystem;
+    [SerializeField] private AudioClip shotClip;
+    [SerializeField] private AudioClip impactClip;
 
     private Rigidbody2D rigid;
+
+    private PlayerController playerController;
 
     private BaseController sourceObject;
 
@@ -23,25 +27,30 @@ public class ProjectileController : MonoBehaviour
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        playerController = PlaySceneManager.Instance.player;
+
+        AudioSource.PlayClipAtPoint(shotClip, playerController.transform.position);
     }
 
     private void FixedUpdate()
     {
-        // Åõ»çÃ¼ ÀÌµ¿
+        // ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½Ìµï¿½
         rigid.velocity = dir * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(targetTag)) // ¸ñÇ¥¹°°ú Ãæµ¹ÇßÀ» °æ¿ì
+        if (collision.gameObject.CompareTag(targetTag)) // ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         {
+            AudioSource.PlayClipAtPoint(impactClip, playerController.transform.position);
+
             BaseStat sourceStat = sourceObject.GetComponent<BaseStat>();
             BaseStat targetStat = collision.gameObject.GetComponent<BaseStat>();
 
-            // µ¥¹ÌÁö ¹ÞÀ½
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             targetStat.TakeDamage((int)sourceStat.GetAttackDamage());
 
-            // È­»ì °üÅë Ã³¸®
+            // È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
             if (pierceNum <= 0)
             {
                 DestroyProjectile();
@@ -51,9 +60,11 @@ public class ProjectileController : MonoBehaviour
                 pierceNum--;
             }
         }
-        //// º®°ú Ãæµ¹ ÇßÀ» °æ¿ì
+        //// ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         else if (collision.gameObject.CompareTag(wallTag))
         {
+            AudioSource.PlayClipAtPoint(impactClip, playerController.transform.position);
+            
             DestroyProjectile();
 
             //if (reflectionNum <= 0)
@@ -62,7 +73,7 @@ public class ProjectileController : MonoBehaviour
             //}
             //else
             //{
-            //    // È­»ìÀÇ ¹Ý»ç°¢ ±¸ÇÏ±â
+            //    // È­ï¿½ï¿½ï¿½ï¿½ ï¿½Ý»ç°¢ ï¿½ï¿½ï¿½Ï±ï¿½
             //    ContactPoint2D[] contacts = new ContactPoint2D[1];
             //    collision.GetContacts(contacts);
             //    Vector3 vecNormal = contacts[0].normal;
@@ -83,42 +94,42 @@ public class ProjectileController : MonoBehaviour
         
     public void Init(BaseController source, Vector3 position, Vector3 dir, string targetTag)
     {
-        // Åõ»çÃ¼¸¦ ¹ß»çÇÑ ¿ÀºêÁ§Æ®
+        // ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         sourceObject = source;
 
-        // Åõ»çÃ¼ ¹Ý»ç, °üÅë ¼ö
+        // ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½Ý»ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         pierceNum = source.GetComponent<BaseStat>().GetProjectilePierce();
         reflectionNum = source.GetComponent<BaseStat>().GetMaxProjectileReflection();
 
-        // Åõ»çÃ¼ À§Ä¡ °¢µµ
+        // ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
         transform.position = position;
         transform.rotation = Quaternion.FromToRotation(Vector3.right, dir.normalized);
 
         this.dir = dir;
 
-        // ¸ñÇ¥¹°ÀÇ ÅÂ±×
+        // ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½Â±ï¿½
         this.targetTag = targetTag;
     }
 
     public void CreatePaticle(Vector3 position)
     {
 
-        // ÁöÁ¤µÈ À§Ä¡¿¡ ÆÄÆ¼Å¬ »ý¼º
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½Æ¼Å¬ ï¿½ï¿½ï¿½ï¿½
         GameObject particleInstance = Instantiate(impactParticleSystem, position, Quaternion.identity);
 
         ParticleSystem paticle = particleInstance.GetComponent<ParticleSystem>();
 
-        // ÆÄÆ¼Å¬ °¹¼ö ¼³Á¤
+        // ï¿½ï¿½Æ¼Å¬ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         ParticleSystem.EmissionModule em = paticle.emission;
         em.SetBurst(0, new ParticleSystem.Burst(0, Mathf.Ceil(12.5f)));
 
-        // ÆÄÆ¼Å¬ ¼Óµµ ¼³Á¤
+        // ï¿½ï¿½Æ¼Å¬ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
         ParticleSystem.MainModule mainModule = paticle.main;
         mainModule.startSpeedMultiplier = 10f;
 
         paticle.Play();
 
-        // ÆÄÆ¼Å¬ ½Ã½ºÅÛ ³¡³­ ÈÄ ÆÄ±«
+        // ï¿½ï¿½Æ¼Å¬ ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ä±ï¿½
         Destroy(particleInstance, paticle.main.duration);
     }
 }
