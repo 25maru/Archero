@@ -8,4 +8,10 @@ public class PlaySceneManager : MonoBehaviour
     public static PlaySceneManager Instance { get { return instance; } }
 
     public PlayerController player;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
 }
