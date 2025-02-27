@@ -6101,6 +6101,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1779899699894894805, guid: 18dc50678c4500f4293834ffe0830856, type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 1035613998}
+    - target: {fileID: 1779899699894894805, guid: 18dc50678c4500f4293834ffe0830856, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 802063978}
