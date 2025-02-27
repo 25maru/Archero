@@ -10,7 +10,7 @@ public class BaseStat : MonoBehaviour
 
     // 초기화되야 하는 스탯변수
     protected int health;
-    protected bool dead;
+    public bool dead;
     
     protected virtual void Start()
     {

@@ -84,6 +84,7 @@ MonoBehaviour:
     width: 10
     height: 12
   gizmoColor: {r: 1, g: 0, b: 0, a: 0.3}
+  randomPosition: {x: 0, y: 0}
   BossAnimator: {fileID: 4962821236999722523}
   BossStat: {fileID: 7782142652161539109}
   NormalAttack:
@@ -91,6 +92,10 @@ MonoBehaviour:
   - {fileID: 3206680852772170787, guid: 3f01b03859e16ea409a7b26dd5e8f6b8, type: 3}
   - {fileID: 2304502793780111437, guid: 8c304822d196af246963347381933861, type: 3}
   - {fileID: 5988871411733553690, guid: b6bc68c164d7e2c40a6c1c3426ffcadf, type: 3}
+  ChangeAttack:
+  - {fileID: 550662544621676677, guid: 69aa1ca0728f2c242aeee2345721ce92, type: 3}
+  - {fileID: 8821179703987459477, guid: aabcc5d193e422047932520aef859b72, type: 3}
+  - {fileID: 4216062848242219096, guid: 648b64e59316fd24d89b18cd7c145338, type: 3}
 --- !u!1 &8476536144583407427
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseData: {fileID: 11400000, guid: 9b497d6d208016a46b0c394498d394fe, type: 2}
+  dead: 0
 --- !u!95 &4962821236999722523
 Animator:
   serializedVersion: 5

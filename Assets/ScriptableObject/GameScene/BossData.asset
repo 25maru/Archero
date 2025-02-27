@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BossData
   m_EditorClassIdentifier: 
   Name: Boss
-  HP: 2500
-  MaxHP: 2500
+  HP: 30
+  MaxHP: 30
   IsDead: 0
   level: 0
   exp: 0

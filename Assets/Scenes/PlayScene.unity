@@ -1557,6 +1557,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2055102311959635375, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
   m_PrefabInstance: {fileID: 212287123}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &344677534
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5702957608753273539, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702957608753273539, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702957608753273539, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702957608753273539, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702957608753273539, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702957608753273539, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702957608753273539, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702957608753273539, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702957608753273539, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702957608753273539, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397979808755277260, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
+      propertyPath: m_Name
+      value: BossStage
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8407bb17c48e96346af5244c0840f828, type: 3}
 --- !u!1 &354628380
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,6 +3050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseData: {fileID: 11400000, guid: a3ae2aecf8d67c643a44d41bbdf10b1b, type: 2}
+  dead: 0
   GameData: {fileID: 11400000, guid: 15380bf2cb4039c42b1dd402515b4350, type: 2}
 --- !u!114 &650537800
 MonoBehaviour:
@@ -3010,9 +3068,9 @@ MonoBehaviour:
   projectileSpacing: 0.2
   enemyPool: {fileID: 1737727503}
   offsetAttackDis: 1
-  uiHealth: {fileID: 2025491633}
-  uiExp: {fileID: 1651265009}
-  uiLevelUp: {fileID: 1657041963}
+  uiHealth: {fileID: 0}
+  uiExp: {fileID: 0}
+  uiLevelUp: {fileID: 0}
 --- !u!61 &650537801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9599,14 +9657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd56ff760bec9fa4ba42303fb3d4adea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listAbility:
-  - {fileID: 4475410153753293750, guid: 552a4f2728e677b40be4f94a8f1e602d, type: 3}
-  - {fileID: 7214344647594553811, guid: be1363a0f3034b04abd3df137459823d, type: 3}
-  - {fileID: 2924132923483580845, guid: 677a9b6e0b06c6140a41e3e22a1d0f96, type: 3}
-  - {fileID: 7379698742471955906, guid: 668c8d2ee584aa64cbff3f6325f5fd9e, type: 3}
-  - {fileID: 5271508954957104976, guid: ade158ea6c0f34c4db70824606e7b1fa, type: 3}
-  - {fileID: 2438966592454883648, guid: 347390c80d164eb449605b6bdcf7d772, type: 3}
-  layoutGroup: {fileID: 1570733312}
+  listAbility: []
+  layoutGroup: {fileID: 0}
 --- !u!1001 &1688947073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10344,3 +10396,4 @@ SceneRoots:
   - {fileID: 400603970}
   - {fileID: 1062223892}
   - {fileID: 1134385999}
+  - {fileID: 344677534}
