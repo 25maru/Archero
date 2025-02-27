@@ -172,6 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5702957608753273539}
   - component: {fileID: 8645068567976572801}
+  - component: {fileID: 3155549495352189669}
   m_Layer: 0
   m_Name: BossStage
   m_TagString: Untagged
@@ -227,6 +228,20 @@ MonoBehaviour:
   - {fileID: 550662544621676677, guid: 69aa1ca0728f2c242aeee2345721ce92, type: 3}
   - {fileID: 8821179703987459477, guid: aabcc5d193e422047932520aef859b72, type: 3}
   - {fileID: 4216062848242219096, guid: 648b64e59316fd24d89b18cd7c145338, type: 3}
+  tutorialController: {fileID: 3155549495352189669}
+--- !u!114 &3155549495352189669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397979808755277260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2fe72188e6ecf44b16ef44a7643d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!1 &8476536144583407427
 GameObject:
   m_ObjectHideFlags: 0

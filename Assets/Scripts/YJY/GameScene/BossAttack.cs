@@ -22,6 +22,8 @@ public class BossAttack : MonoBehaviour
 
     List<GameObject> NowAttack = new List<GameObject>();
 
+    public TutorialController tutorialController;
+
     private void Start()
     {
         foreach(GameObject attack in NormalAttack)
@@ -47,6 +49,7 @@ public class BossAttack : MonoBehaviour
         {
             CancelInvoke(nameof(Attack));
             BossAnimator.SetBool("IsDead", true);
+            tutorialController.OpenGate();
             Invoke(nameof(Destroy), 2.5f);
         }
     }

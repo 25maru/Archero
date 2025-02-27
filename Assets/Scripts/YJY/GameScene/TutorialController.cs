@@ -19,4 +19,9 @@ public class TutorialController : MonoBehaviour
             gate.Open();
         }
     }
+
+    public void OpenGate()
+    {
+        gate.Open();
+    }
 }
