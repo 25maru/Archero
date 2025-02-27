@@ -5302,8 +5302,8 @@ MonoBehaviour:
   Blue: {fileID: 5891745560259823085}
   RedParticle: {fileID: 8824947451500024737}
   BlueParticle: {fileID: 1973332326653315058}
-  Right: {fileID: 5182497393866877965}
-  Left: {fileID: 1201918169199244029}
+  Redwind: {fileID: 5182497393866877965}
+  Bluewind: {fileID: 1201918169199244029}
 --- !u!1 &2356215757694993910
 GameObject:
   m_ObjectHideFlags: 0
@@ -5713,7 +5713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &469643458252698574
 Transform:
   m_ObjectHideFlags: 0
@@ -11159,7 +11159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2210437279413902463
 Transform:
   m_ObjectHideFlags: 0

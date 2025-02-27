@@ -39,9 +39,8 @@ public class StageButtonAction : MonoBehaviour
     public void ChangeState()
     {
         controller.ChangeisRed();
-        DownThisButton();
     }
-    void DownThisButton()
+    public void DownThisButton()
     {
         DownButton.SetActive(true);
         UpButton.SetActive(false); //빨간 버튼을 누른 상태로

@@ -11,27 +11,29 @@ public class NormalStageController : MonoBehaviour
     public GameObject RedParticle;
     public GameObject BlueParticle;
 
-    public WindZone Right;
-    public WindZone Left;
+    public WindZone Redwind;
+    public WindZone Bluewind;
 
     public void ChangeisRed()
     {
         isRed = !isRed;
         if (isRed)//빨간 버튼이 눌릴 시
         {
+            Red.DownThisButton();
             Blue.UpThisButton();
             RedParticle.SetActive(true);
             BlueParticle.SetActive(false);
-            Right.isUP = true;
-            Left.isUP = false;
+            Redwind.isUP = true;
+            Bluewind.isUP = false;
         }
         else
         {
             Red.UpThisButton();
+            Blue.DownThisButton();
             RedParticle.SetActive(false);
             BlueParticle.SetActive(true);
-            Right.isUP = false;
-            Left.isUP = true;
+            Redwind.isUP = false;
+            Bluewind.isUP = true;
         }
     }
 }
