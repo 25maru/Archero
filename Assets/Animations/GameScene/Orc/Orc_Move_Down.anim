@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_Dead
+  m_Name: Orc_Move_Down
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -48338786, guid: 53e28b7eb4109c14489d8fe2a2e3b55c, type: 3}
+      value: {fileID: -1462203607, guid: a51f2bec1f91a6f4b9bd0f255e2f9507, type: 3}
+    - time: 0.2
+      value: {fileID: 391567186, guid: a51f2bec1f91a6f4b9bd0f255e2f9507, type: 3}
+    - time: 0.4
+      value: {fileID: 893547211, guid: a51f2bec1f91a6f4b9bd0f255e2f9507, type: 3}
+    - time: 0.6
+      value: {fileID: 391567186, guid: a51f2bec1f91a6f4b9bd0f255e2f9507, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,13 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -48338786, guid: 53e28b7eb4109c14489d8fe2a2e3b55c, type: 3}
+    - {fileID: -1462203607, guid: a51f2bec1f91a6f4b9bd0f255e2f9507, type: 3}
+    - {fileID: 391567186, guid: a51f2bec1f91a6f4b9bd0f255e2f9507, type: 3}
+    - {fileID: 893547211, guid: a51f2bec1f91a6f4b9bd0f255e2f9507, type: 3}
+    - {fileID: 391567186, guid: a51f2bec1f91a6f4b9bd0f255e2f9507, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.2
+    m_StopTime: 0.8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

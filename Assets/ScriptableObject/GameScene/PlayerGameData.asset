@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: PlayerGameData
   m_EditorClassIdentifier: 
   Name: Test
-  HP: 94
+  HP: 100
   MaxHP: 0
   IsDead: 0
-  level: 2
+  level: 1
   exp: 0
-  maxExp: 6
+  maxExp: 5
   Gold: 0
   Diamond: 0
   speed: 1

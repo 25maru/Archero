@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a51f2bec1f91a6f4b9bd0f255e2f9507
+guid: 53e28b7eb4109c14489d8fe2a2e3b55c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,6 +81,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -119,30 +132,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Orc_Down0
+      name: Player_DEAD_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 336
-        width: 31
-        height: 45
+        x: 9
+        y: 337
+        width: 29
+        height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c77a6eef68a19e140b3932c93636b810
-      internalID: -1462203607
+      spriteID: 797ca3fc2e71eab44af0c70c3c89ffb5
+      internalID: -48338786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Orc_Down1
+      name: Player_DEAD_1
       rect:
         serializedVersion: 2
-        x: 56
-        y: 336
-        width: 31
-        height: 45
+        x: 57
+        y: 337
+        width: 29
+        height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f7ffaddfc21c5b46b7e1028801b0dce
-      internalID: 391567186
+      spriteID: feaf6c01849e47d4c9c1e05dac2b9db0
+      internalID: -493936867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Orc_Down2
+      name: Player_DEAD_2
       rect:
         serializedVersion: 2
-        x: 104
-        y: 336
-        width: 31
-        height: 45
+        x: 105
+        y: 337
+        width: 29
+        height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,134 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: beed7e0b510c11548900e9e69601c03b
-      internalID: 893547211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Orc_Right0
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 240
-        width: 31
-        height: 45
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea719a76c5465b94c9cac66d70d2b039
-      internalID: -1600133631
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Orc_Right1
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 240
-        width: 31
-        height: 45
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a111af20b735e9449037e9c06101240
-      internalID: -198408096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Orc_Right2
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 240
-        width: 31
-        height: 45
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 159cae9450f334a439036cf9ae6d8897
-      internalID: -85147579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Orc_Up0
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 192
-        width: 31
-        height: 45
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c87a5c8037c8ded41b58bab69cfd8d3e
-      internalID: -30191453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Orc_Up1
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 192
-        width: 31
-        height: 45
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc93e44037ee9a542ad6a2033d6d5d2a
-      internalID: -349231815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Orc_Up2
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 192
-        width: 31
-        height: 45
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86c8f7d65eb3983438f7d116cbb71e91
-      internalID: -1212390914
+      spriteID: 4594e1e383fb30841a4fb06e183a9d4f
+      internalID: 1246836744
       vertices: []
       indices: 
       edges: []
@@ -335,15 +209,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Orc_Down0: -1462203607
-      Orc_Down1: 391567186
-      Orc_Down2: 893547211
-      Orc_Right0: -1600133631
-      Orc_Right1: -198408096
-      Orc_Right2: -85147579
-      Orc_Up0: -30191453
-      Orc_Up1: -349231815
-      Orc_Up2: -1212390914
+      Player_DEAD_0: -48338786
+      Player_DEAD_1: -493936867
+      Player_DEAD_2: 1246836744
+      Player_DEAD_3: 79516761
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
