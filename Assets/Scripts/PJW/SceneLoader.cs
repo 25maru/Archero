@@ -33,6 +33,7 @@ public class SceneLoader : MonoSingleton<SceneLoader>
     /// <param name="sceneName">씬 이름</param>
     public void LoadScene(string sceneName)
     {
+        Time.timeScale = 1;
         StartCoroutine(LoadSceneCoroutine(sceneName));
     }
     

@@ -28,7 +28,7 @@ public class BaseStat : MonoBehaviour
     {
         health -= damage;
 
-        if (health < 0)
+        if (health <= 0 && !dead)
         {
             health = 0;
             dead = true;
