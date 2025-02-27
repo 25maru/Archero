@@ -6,6 +6,7 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private ParticleSystem impactParticleSystem;
 
     private Rigidbody2D rigid;
 
@@ -50,8 +51,7 @@ public class ProjectileController : MonoBehaviour
 
     private void DestroyProjectile()
     {
-        // 파티클 생성 추가 예정
-
+        CreatePaticle(transform.position);
             
         Destroy(gameObject);
     }
@@ -69,5 +69,21 @@ public class ProjectileController : MonoBehaviour
         // 목표물의 태그
         this.targetTag = targetTag;
         this.Wall = Wall;
+    }
+
+    public void CreatePaticle(Vector3 position)
+    {
+        // 지정된 위치에 파티클 생성
+        ParticleSystem particleInstance = Instantiate(impactParticleSystem, position, Quaternion.identity);
+
+        // 파티클 갯수 설정
+        ParticleSystem.EmissionModule em = particleInstance.emission;
+        em.SetBurst(0, new ParticleSystem.Burst(0, Mathf.Ceil(12.5f)));
+
+        // 파티클 속도 설정
+        ParticleSystem.MainModule mainModule = particleInstance.main;
+        mainModule.startSpeedMultiplier = 10f;
+
+        particleInstance.Play();
     }
 }
