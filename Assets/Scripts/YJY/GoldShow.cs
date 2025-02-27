@@ -6,7 +6,7 @@ using UnityEngine;
 public class GoldShow : MonoBehaviour
 {
     public TextMeshProUGUI Gold;
-    public PlayerData playerData;
+    public StatData playerData;
 
     private void Start()
     {

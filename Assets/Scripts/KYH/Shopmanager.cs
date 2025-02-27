@@ -9,7 +9,7 @@ public class ShopManager : MonoBehaviour
     public static ShopManager Instance => instance;
 
     [SerializeField] private MenuUIController uIController;
-    [SerializeField] private PlayerData playerData;
+    [SerializeField] private StatData playerData;
     [SerializeField] private InventoryData inventoryData;
     [SerializeField] private ShopData shopData;
 
