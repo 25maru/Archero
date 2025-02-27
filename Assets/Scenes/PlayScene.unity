@@ -1024,6 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c6aa308111bc24eafb08eb8079666f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &629571150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810f5eea2ce136b45b2bc7df8c86f62d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseData: {fileID: 11400000, guid: a3ae2aecf8d67c643a44d41bbdf10b1b, type: 2}
+  baseData: {fileID: 0}
   GameData: {fileID: 11400000, guid: 15380bf2cb4039c42b1dd402515b4350, type: 2}
 --- !u!114 &650537800
 MonoBehaviour:
@@ -1354,8 +1355,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9375, y: 1.5}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.96875, y: 1.46875}
     newSize: {x: 0.9375, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5771,6 +5772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c6aa308111bc24eafb08eb8079666f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &1157378371
 GameObject:
   m_ObjectHideFlags: 0
@@ -6914,7 +6916,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -70}
-  m_SizeDelta: {x: 0, y: 70}
+  m_SizeDelta: {x: -200, y: 70}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1651265009
 MonoBehaviour:
@@ -7204,6 +7206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c6aa308111bc24eafb08eb8079666f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &1737727503
 GameObject:
   m_ObjectHideFlags: 0
