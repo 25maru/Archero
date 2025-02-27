@@ -9,6 +9,8 @@ public class PlaySceneManager : MonoBehaviour
 
     public PlayerController player;
 
+    public Gate gate;
+
     private void Awake()
     {
         if (instance == null)

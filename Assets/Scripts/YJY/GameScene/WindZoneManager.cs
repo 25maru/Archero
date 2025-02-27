@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
-public class WindZone : MonoBehaviour
+public class WindZoneManager : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
     public bool isUP = false;

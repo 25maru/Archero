@@ -2857,6 +2857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseData: {fileID: 11400000, guid: a3ae2aecf8d67c643a44d41bbdf10b1b, type: 2}
+  dead: 0
   GameData: {fileID: 11400000, guid: 15380bf2cb4039c42b1dd402515b4350, type: 2}
 --- !u!114 &802063980
 MonoBehaviour:
@@ -3442,6 +3443,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2055102311959635375, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
   m_PrefabInstance: {fileID: 1035613996}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1035613998 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8595965009721191091, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+  m_PrefabInstance: {fileID: 1035613996}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c1646c9dcc51a4e8234da7cd8822a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1148664114
 GameObject:
   m_ObjectHideFlags: 0
@@ -10360,6 +10372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 802063980}
+  gate: {fileID: 1035613998}
 --- !u!1 &2114896172
 GameObject:
   m_ObjectHideFlags: 0

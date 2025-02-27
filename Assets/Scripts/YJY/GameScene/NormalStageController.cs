@@ -11,8 +11,8 @@ public class NormalStageController : MonoBehaviour
     public List<GameObject>  RedParticle;
     public List<GameObject> BlueParticle;
 
-    public List<WindZone>  Redwind;
-    public List<WindZone> Bluewind;
+    public List<WindZoneManager>  Redwind;
+    public List<WindZoneManager> Bluewind;
 
     public void ChangeisRed()
     {
@@ -35,11 +35,11 @@ public class NormalStageController : MonoBehaviour
             {
                 bp.SetActive(false);
             }
-            foreach (WindZone rw in Redwind)
+            foreach (WindZoneManager rw in Redwind)
             {
                 rw.isUP = true;
             }
-            foreach (WindZone bw in Bluewind)
+            foreach (WindZoneManager bw in Bluewind)
             {
                 bw.isUP = false;
             }
@@ -62,11 +62,11 @@ public class NormalStageController : MonoBehaviour
             {
                 bp.SetActive(true);
             }
-            foreach (WindZone rw in Redwind)
+            foreach (WindZoneManager rw in Redwind)
             {
                 rw.isUP = false;
             }
-            foreach (WindZone bw in Bluewind)
+            foreach (WindZoneManager bw in Bluewind)
             {
                 bw.isUP = true;
             }
