@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro.EditorUtilities;
 using UnityEngine;
 
-public abstract class BaseController : MonoBehaviour
+public class BaseController : MonoBehaviour
 {
     [Header("Projectile Info")]
     [SerializeField] protected GameObject projectile;
