@@ -172,3 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  impactParticleSystem: {fileID: 5241644763800610069, guid: e16873ded807c9e4ea3563f62f1a7ee7, type: 3}

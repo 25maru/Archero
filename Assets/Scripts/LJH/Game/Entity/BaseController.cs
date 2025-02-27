@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class BaseController : MonoBehaviour
 {
     [Header("Projectile Info")]
-    [SerializeField] protected ProjectileController projectile;
+    [SerializeField] protected GameObject projectile;
     [SerializeField] protected float projectileSpacing = 0.2f;
 
     protected Rigidbody2D rigid;

@@ -194,9 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb98b9866a75087478e948e828bb08b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 99480226696239573, guid: 255cc157d2a529145bd10533a55297be, type: 3}
+  projectile: {fileID: 6842618479569418147, guid: 255cc157d2a529145bd10533a55297be, type: 3}
   projectileSpacing: 0.2
-  target: {fileID: 3843050575346383397, guid: 453cce23c862d6944899418d4d9c8f1b, type: 3}
   followRange: 10
   AttackRange: 5
   gizmoFollowColor: {r: 1, g: 0, b: 0, a: 1}

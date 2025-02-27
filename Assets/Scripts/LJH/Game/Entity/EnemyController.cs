@@ -63,12 +63,12 @@ public class EnemyController : BaseController
             // 투사체 이동 방향
             ProjectileDir = (target.transform.position - transform.position).normalized;
 
-            ProjectileController newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+            GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
 
             // 투사체 생성 위치
             Vector3 createPos = transform.position + (ProjectileDir * offsetAttackDis);
 
-            newProjectile.Init(this, createPos, ProjectileDir, "Player");
+            newProjectile.GetComponent<ProjectileController>().Init(this, createPos, ProjectileDir, "Player");
         }
     }
 

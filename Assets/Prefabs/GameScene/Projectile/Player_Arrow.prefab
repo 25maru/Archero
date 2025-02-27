@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2728962905275142888}
   - component: {fileID: 99480226696239573}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: Player_Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,4 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  impactParticleSystem: {fileID: 6736243618708472022, guid: e16873ded807c9e4ea3563f62f1a7ee7, type: 3}
+  impactParticleSystem: {fileID: 5241644763800610069, guid: e16873ded807c9e4ea3563f62f1a7ee7, type: 3}

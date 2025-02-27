@@ -68,7 +68,8 @@ public class PlayerController : BaseController
 
         for (int i = 0; i < stat.GetProjectileNum(); i++)
         {
-            ProjectileController newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+            GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+
 
             // 투사체 간격 오프셋
             float Spacing = (i - (stat.GetProjectileNum() - 1) / 2) * projectileSpacing;
@@ -76,7 +77,7 @@ public class PlayerController : BaseController
             // 투사체 생성 위치
             Vector3 createPos = transform.position + (vecNormal * Spacing) + (ProjectileDir * offsetAttackDis);
 
-            newProjectile.Init(this, createPos, ProjectileDir, "Enemy");
+            newProjectile.GetComponent<ProjectileController>().Init(this, createPos, ProjectileDir, "Enemy");
         }
     }
 }
