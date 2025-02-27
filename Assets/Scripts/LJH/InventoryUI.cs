@@ -17,7 +17,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] Image[] equipSlot;
 
     // PlayerStat ÂüÁ¶
-    [SerializeField] PlayerData playerData;
+    [SerializeField] StatData playerData;
 
     InventoryData invenData;
     GridLayoutGroup gridLayout;

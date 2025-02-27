@@ -6,7 +6,7 @@ using UnityEngine;
 public class DiaShow : MonoBehaviour
 {
     public TextMeshProUGUI Dia;
-    public PlayerData playerData;
+    public StatData playerData;
 
     private void Start()
     {
