@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2728962905275142888}
   - component: {fileID: 99480226696239573}
   m_Layer: 0
-  m_Name: Goblin_Arrow
+  m_Name: Orc_Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.11, y: -0.38, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300080, guid: 95666895110383d4fa76208bf0f66ee2, type: 3}
-  m_Color: {r: 0.16340333, g: 0.26646167, b: 0.6792453, a: 1}
+  m_Sprite: {fileID: 21300290, guid: c2957f4d831870a48af4ec016652548d, type: 3}
+  m_Color: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -146,7 +146,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.041246653, y: -0.02791524}
+  m_Offset: {x: -0.0043461323, y: -0.07042475}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -157,7 +157,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3994894, y: 0.41164905}
+  m_Size: {x: 0.42618752, y: 0.3862013}
   m_EdgeRadius: 0
 --- !u!114 &99480226696239573
 MonoBehaviour:
