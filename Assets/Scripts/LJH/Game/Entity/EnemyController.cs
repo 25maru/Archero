@@ -15,7 +15,6 @@ public class EnemyController : BaseController
     PlayerController target;
     bool isCoroutine = false;
     float timeDead;
-    public Gate gate;           // gate 오브젝트 연결
 
     public static List<EnemyController> enemies = new List<EnemyController>();      // 적 리스트 저장할 변수
     
@@ -31,6 +30,16 @@ public class EnemyController : BaseController
     {
         if (stat.IsDead())
         {
+            Gate gate = PlaySceneManager.Instance.gate;
+
+            // 적 사망했는지 확인 후 모든 적 사망 시 게이트 오픈
+            enemies.Remove(this);   // 적 사망시 리스트 제거
+
+            if (enemies.Count == 0 && gate != null)      // 모든 적이 사망했고 게이트 연결되어 있을 시
+            {
+                gate.Open();
+            }
+
             if (!isCoroutine)
             {
                 isCoroutine = true;
@@ -42,17 +51,6 @@ public class EnemyController : BaseController
 
         lastAttack += Time.deltaTime;
         FindTartget();
-
-        // 적 사망했는지 확인 후 모든 적 사망 시 게이트 오픈
-        if (stat.IsDead())
-        {
-            enemies.Remove(this);   // 적 사망시 리스트 제거
-
-            if(enemies.Count == 0 && gate != null)      // 모든 적이 사망했고 게이트 연결되어 있을 시
-            {
-                gate.Open();
-            }
-        }
     }
 
     private IEnumerator FadeoutAnim()
