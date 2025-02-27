@@ -11,6 +11,8 @@ public class PlaySceneManager : MonoBehaviour
 
     public Gate gate;
 
+    public GameObject expOrb;
+
     private void Awake()
     {
         if (instance == null)

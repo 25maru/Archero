@@ -10326,6 +10326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 650537800}
+  gate: {fileID: 0}
+  expOrb: {fileID: 7771735707744516878, guid: 97bdb1baafa70f840aad01e04e2e9d90, type: 3}
 --- !u!1 &2068694802
 GameObject:
   m_ObjectHideFlags: 0
