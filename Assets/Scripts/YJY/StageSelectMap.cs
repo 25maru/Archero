@@ -15,7 +15,14 @@ public class StageSelectMap : MonoBehaviour
         if (PlayerPosition == null) Debug.Log("포지션이 없습니다.");
         if (PlayerPrefs.HasKey(SaveKey)) //Stage가 정보가 있다면 그 위치로 플레이어 이동
         {
-            thisStageSave = PlayerPrefs.GetInt(SaveKey);
+            if(SaveKey == "Tutorial")
+            {
+                thisStageSave = PlayerPrefs.GetInt(SaveKey) / 2;
+            }
+            else
+            {
+                thisStageSave = PlayerPrefs.GetInt(SaveKey) / 10;
+            }
         }
         else
         {
