@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : BaseController
@@ -12,6 +13,8 @@ public class EnemyController : BaseController
     [SerializeField] float offsetAttackDis = 1f; // 발사 방향 앞쪽으로 옮기는 오프셋
 
     PlayerController target;
+    bool isCoroutine = false;
+    float timeDead;
 
     protected override void Start()
     {
@@ -22,9 +25,38 @@ public class EnemyController : BaseController
 
     private void Update()
     {
-        lastAttack += Time.deltaTime;
+        if (stat.IsDead())
+        {
+            if (!isCoroutine)
+            {
+                isCoroutine = true;
+                anim.SetBool("IsDead", true);
+                StartCoroutine(FadeoutAnim());
+            }
+            return;
+        }
 
+        lastAttack += Time.deltaTime;
         FindTartget();
+    }
+
+    private IEnumerator FadeoutAnim()
+    {
+        while (true)
+        {
+            timeDead += Time.deltaTime / 5f;
+
+            Color color = spriteRender.color;
+            color.a = Mathf.Lerp(color.a, 0, timeDead);
+            spriteRender.color = color;
+
+            if (color.a <= 0)
+                break;
+
+            yield return null;
+        }
+
+        Destroy(gameObject);
     }
 
     private void FindTartget()

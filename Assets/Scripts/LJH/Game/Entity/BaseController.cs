@@ -33,6 +33,9 @@ public abstract class BaseController : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
+        if (stat.IsDead())
+            return;
+
         Movement(moveDir);
     }
 

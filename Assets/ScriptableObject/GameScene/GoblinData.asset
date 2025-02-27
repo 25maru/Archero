@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: GoblinData
   m_EditorClassIdentifier: 
   Name: Goblin
-  HP: 5000
+  HP: 100
   MaxHP: 100
   IsDead: 0
+  level: 0
+  exp: 0
+  maxExp: 0
   Gold: 0
   Diamond: 0
   speed: 1

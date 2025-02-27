@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerGameData
   m_EditorClassIdentifier: 
   Name: Test
-  HP: 20
+  HP: 100
   MaxHP: 1
   IsDead: 0
   level: 8

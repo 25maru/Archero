@@ -15,6 +15,7 @@ public class BaseStat : MonoBehaviour
     protected virtual void Start()
     {
         health = baseData.MaxHP;
+        dead = false;
     }
 
     public virtual void TakeDamage(int damage)
