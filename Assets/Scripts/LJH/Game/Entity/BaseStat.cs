@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class BaseStat : MonoBehaviour
 {
     [SerializeField] protected StatData baseData;
+    [SerializeField] private GameObject DeathPanel;         // 사망 시 패널 출력
 
     // 초기화되야 하는 스탯변수
     protected int health;
@@ -16,6 +17,11 @@ public class BaseStat : MonoBehaviour
     {
         health = baseData.MaxHP;
         dead = false;
+
+        if(DeathPanel != null)
+        {
+            DeathPanel.SetActive(false);                    // 패널 비활성화
+        }
     }
 
     public virtual void TakeDamage(int damage)
@@ -44,6 +50,12 @@ public class BaseStat : MonoBehaviour
     public void Die()
     {
         Debug.Log("캐릭터가 사망했습니다.");
+
+        if (CompareTag("Player"))
+        {
+            DeathPanel.SetActive(true);         // 플레이어 사망 시 출력
+            Time.timeScale = 0;                 // 패널 출력 시 시간 멈춤
+        }
     }
 
     public bool IsDead()
