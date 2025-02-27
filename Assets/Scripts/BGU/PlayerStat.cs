@@ -13,23 +13,37 @@ public class PlayerStat : BaseStat
         invenHandler = GetComponent<InventoryHandler>();
     }
 
-    public void FullHealth()
+    public void InitGameData()
     {
+        GameData.level = 1;
+        GameData.MaxHP = 1;
         GameData.HP = GetMaxHealth();
+        GameData.Speed = 1;
+        GameData.AttackDamage = 1;
+        GameData.AttackSpeed = 1;
+        GameData.exp = 0;
+        GameData.maxExp = 5;
+
+        GameData.Gold = 0;
+        GameData.Diamond = 0;
     }
 
     public void GetExp(int exp)
     {
         GameData.exp += exp;
 
-        if (GameData.exp < GameData.maxExp) 
+        if (GameData.maxExp <= GameData.exp) 
         {
+            PlaySceneManager.Instance.player.ShowLevelUpUI();
+
             GameData.level++;
             GameData.exp = 0;
 
             // 레벨업시 필요 경험치 증가
             GameData.maxExp = (int)Mathf.Ceil(GameData.maxExp * 1.2f);
         }
+
+        PlaySceneManager.Instance.player.ChangeExpUI();
     }
 
     public override void TakeDamage(int damage)
@@ -42,6 +56,8 @@ public class PlayerStat : BaseStat
             dead = true;
             Die();
         }
+
+        PlaySceneManager.Instance.player.ChangeHealthUI();
     }
 
     public override void Heal(int amount)
@@ -59,7 +75,7 @@ public class PlayerStat : BaseStat
 
     public override float GetAttackDamage()
     {
-        float equipDamage = invenHandler.GetEquipAvility_Attack();
+        float equipDamage = invenHandler.GetEquipAbility_Attack();
 
         return (baseData.AttackDamage + equipDamage) * GameData.AttackDamage;
     }
@@ -71,9 +87,24 @@ public class PlayerStat : BaseStat
 
     public override int GetMaxHealth()
     {
-        int equipHealth = (int)invenHandler.GetEquipAvility_Health();
+        int equipHealth = (int)invenHandler.GetEquipAbility_Health();
 
-        return (baseData.MaxHP + +equipHealth) * GameData.MaxHP ;
+        return (baseData.MaxHP + +equipHealth) + GameData.MaxHP ;
+    }
+
+    public int GetCurrentExp()
+    {
+        return GameData.exp;
+    }
+
+    public int GetMaxExp()
+    {
+        return GameData.maxExp;
+    }
+
+    public int GetLevel()
+    {
+        return GameData.level;
     }
 
     public override float GetSpeed()
@@ -108,9 +139,20 @@ public class PlayerStat : BaseStat
         GameData.AttackDamage += damage;
     }
 
+    public void SetAttackSpeed(float speed)
+    {
+        GameData.AttackSpeed += speed;
+    }
+
     public void SetSpeed(float speed)
     {
         GameData.Speed += speed;
+    }
+
+    public void SetMaxHealth(int health)
+    {
+        GameData.MaxHP += health;
+        GameData.HP += health;
     }
 
     public void SetProjectileNum(int num)
@@ -118,14 +160,14 @@ public class PlayerStat : BaseStat
         GameData.projectileNum += num;
     }
 
-    public void SetProjectilePierce()
+    public void SetProjectilePierce(int num)
     {
-        GameData.projectilePierce += GameData.projectilePierce;
+        GameData.projectilePierce += num;
     }
 
-    public void SetProjectileReflection()
+    public void SetProjectileReflection(int num)
     {
-        GameData.projectileReflection += GameData.projectileReflection;
+        GameData.projectileReflection += num;
     }
     #endregion
 }
