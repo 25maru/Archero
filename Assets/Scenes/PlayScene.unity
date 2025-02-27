@@ -836,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf98eea5df51e843b580108e4641444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 99480226696239573, guid: 2f8a588938255f6418787a509cd1d8a9, type: 3}
+  projectile: {fileID: 6842618479569418147, guid: 2f8a588938255f6418787a509cd1d8a9, type: 3}
   projectileSpacing: 0.2
   enemyPool: {fileID: 1737727503}
   Map: {fileID: 642003792}
