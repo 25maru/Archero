@@ -17,7 +17,7 @@ public class EnemyController : BaseController
     {
         base.Start();
 
-        target = FindAnyObjectByType<PlayerController>();
+        target = PlaySceneManager.Instance.player;
     }
 
     private void Update()
