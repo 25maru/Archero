@@ -27,6 +27,8 @@ public class GameStartButton : MonoBehaviour
 
     void InvokeStartGame()
     {
+        PlayerPrefs.DeleteAll();
+
         GameManager.Instance.ChangeState(targetState);
         if (SelectManager.Instance.state == SelectManager.SelectState.Normal)
         {

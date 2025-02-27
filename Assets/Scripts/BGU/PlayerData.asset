@@ -16,8 +16,14 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   IsDead: 0
+  level: 0
+  exp: 0
+  maxExp: 0
   Gold: 1000
   Diamond: 999
   speed: 3
   attackDamage: 3
   attackSpeed: 3
+  projectileNum: 1
+  projectilePierce: 0
+  projectileReflection: 0
