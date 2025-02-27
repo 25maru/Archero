@@ -141,10 +141,10 @@ TextureImporter:
         serializedVersion: 2
         x: 7
         y: 240
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 31
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,10 +162,10 @@ TextureImporter:
         serializedVersion: 2
         x: 55
         y: 240
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 31
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -183,10 +183,10 @@ TextureImporter:
         serializedVersion: 2
         x: 103
         y: 240
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 31
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,10 +204,10 @@ TextureImporter:
         serializedVersion: 2
         x: 8
         y: 336
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 31
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,12 +223,12 @@ TextureImporter:
       name: playerSD_Down1
       rect:
         serializedVersion: 2
-        x: 57
+        x: 56
         y: 336
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 31
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: playerSD_Down2
       rect:
         serializedVersion: 2
-        x: 105
+        x: 104
         y: 336
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 31
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,12 +265,12 @@ TextureImporter:
       name: playerSD_Up0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 8
         y: 192
-        width: 30
+        width: 31
         height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -288,10 +288,10 @@ TextureImporter:
         serializedVersion: 2
         x: 56
         y: 192
-        width: 30
+        width: 31
         height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -308,11 +308,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 104
-        y: 190
-        width: 30
+        y: 192
+        width: 31
         height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
