@@ -21,7 +21,7 @@
   <p align="center">
     이 게임 정말 재밋습니다!!
     <br />
-    <a href="https://github.com/25maru/Archero"><strong>View Demo »</strong></a>
+    <a href="https://youtu.be/ApbGSVOhZLc"><strong>View Demo »</strong></a>
     <br />
   </p>
 </div>
