@@ -23,6 +23,13 @@ public class MenuUIController : MonoBehaviour
     public void OpenMenu()
     {
         isMenuOn = !isMenuOn;
+        if (isMenuOn) { 
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
         menu.SetActive(isMenuOn);
     }
 }
