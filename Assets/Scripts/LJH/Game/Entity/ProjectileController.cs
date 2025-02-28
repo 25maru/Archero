@@ -29,7 +29,8 @@ public class ProjectileController : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         playerController = PlaySceneManager.Instance.player;
 
-        AudioSource.PlayClipAtPoint(shotClip, playerController.transform.position);
+        if (shotClip != null)
+            AudioSource.PlayClipAtPoint(shotClip, playerController.transform.position);
     }
 
     private void FixedUpdate()
@@ -42,7 +43,8 @@ public class ProjectileController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(targetTag)) // ��ǥ���� �浹���� ���
         {
-            AudioSource.PlayClipAtPoint(impactClip, playerController.transform.position);
+            if (impactClip != null)
+                AudioSource.PlayClipAtPoint(impactClip, playerController.transform.position);
 
             BaseStat sourceStat = sourceObject.GetComponent<BaseStat>();
             BaseStat targetStat = collision.gameObject.GetComponent<BaseStat>();
@@ -63,7 +65,8 @@ public class ProjectileController : MonoBehaviour
         //// ���� �浹 ���� ���
         else if (collision.gameObject.CompareTag(wallTag))
         {
-            AudioSource.PlayClipAtPoint(impactClip, playerController.transform.position);
+            if (impactClip != null)
+                AudioSource.PlayClipAtPoint(impactClip, playerController.transform.position);
             
             DestroyProjectile();
 

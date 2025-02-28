@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class SetActive : MonoBehaviour
 {
-    Item item;                                // ¾ÆÀÌÅÛ °´Ã¼
+    [SerializeField] private AudioClip equipClip;
+
+    Item item;                                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
     
     InventoryHandler inventoryHandler;
 
@@ -27,24 +29,27 @@ public class SetActive : MonoBehaviour
     public void TogglePanel(GameObject item)
     {
         this.item = item.GetComponent<Item>();
-        gameObject.SetActive(true);     // ÆÐ³Î ¹Ý´ë »óÅÂ·Î ¼³Á¤
+        gameObject.SetActive(true);     // ï¿½Ð³ï¿½ ï¿½Ý´ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     public void OnYesClicked()
     {
+        if (equipClip != null)
+            AudioSource.PlayClipAtPoint(equipClip, Vector3.zero);
+
         Item temp = InventoryManager.Instance.InventoryHandler.Data.listItem[item.itemIdx];
 
-        inventoryHandler.EquipItem(temp); // ¾ÆÀÌÅÛÀ» ¸Å°³º¯¼ö·Î Àü´Þ
-        InventoryManager.Instance.InventoryUI.UpdateEquipSlot(item.Type, item.GetItemSprite()); // ÀåÂø UI ¾÷µ¥ÀÌÆ®
-        InventoryManager.Instance.InventoryUI.UpdateUIFromPlayerStat(); // ÇÃ·¹ÀÌ¾î ½ºÅÈ UI ¾÷µ¥ÀÌÆ®
+        inventoryHandler.EquipItem(temp); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        InventoryManager.Instance.InventoryUI.UpdateEquipSlot(item.Type, item.GetItemSprite()); // ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+        InventoryManager.Instance.InventoryUI.UpdateUIFromPlayerStat(); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 
-        gameObject.SetActive(false); // ÀåÂø ÈÄ ÆÐ³Î ´Ý±â
+        gameObject.SetActive(false); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ð³ï¿½ ï¿½Ý±ï¿½
         item = null;
     }
 
     public void OnNoClicked()
     {
-        gameObject.SetActive(false);                    // ÆÐ³Î ´Ý±â
+        gameObject.SetActive(false);                    // ï¿½Ð³ï¿½ ï¿½Ý±ï¿½
         item = null;
     }
 }

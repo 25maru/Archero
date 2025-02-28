@@ -14,6 +14,7 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private ShopData shopData;
 
     [SerializeField] private Transform content;
+    [SerializeField] private AudioClip equipClip;
 
     private Dictionary<string, bool> purchasedItems = new Dictionary<string, bool>();
     private GoldShow goldShow;
@@ -60,6 +61,9 @@ public class ShopManager : MonoBehaviour
     {
         if (goldShow.Use(item.Cost))
         {
+            if (equipClip != null)
+                AudioSource.PlayClipAtPoint(equipClip, Vector3.zero);
+                
             // shopData.items.Remove(item.gameObject);
             // Destroy(item.gameObject);
             Item temp = shopData.items[item.itemIdx].GetComponent<Item>();

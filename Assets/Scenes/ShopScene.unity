@@ -3988,6 +3988,7 @@ MonoBehaviour:
   inventoryData: {fileID: 11400000, guid: 9690989cf60e81443ae858a644189075, type: 2}
   shopData: {fileID: 11400000, guid: 1bd2ad29443718d49beb72023721679d, type: 2}
   content: {fileID: 962417788}
+  equipClip: {fileID: 8300000, guid: 5f23e40a17c488245bfcf3bf172a20bc, type: 3}
 --- !u!4 &1167628865
 Transform:
   m_ObjectHideFlags: 0
