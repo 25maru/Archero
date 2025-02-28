@@ -67,7 +67,7 @@
 [contributors-shield]: https://img.shields.io/github/contributors/25maru/Archero.svg?style=for-the-badge
 [contributors-url]: https://github.com/25maru/Archero/graphs/contributors
 
-[commits-shield]: https://img.shields.io/github/commits/25maru/Archero.svg?style=for-the-badge
+[commits-shield]: https://img.shields.io/github/commit-activity/y/25maru/Archero.svg?style=for-the-badge
 [commits-url]: https://github.com/25maru/Archero/graphs/commit-activity
 
 [stars-shield]: https://img.shields.io/github/stars/25maru/Archero.svg?style=for-the-badge
