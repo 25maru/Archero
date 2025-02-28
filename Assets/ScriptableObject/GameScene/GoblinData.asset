@@ -21,7 +21,7 @@ MonoBehaviour:
   maxExp: 0
   Gold: 100
   Diamond: 0
-  speed: 1
+  speed: 2
   attackDamage: 5
   attackSpeed: 1.5
   projectileNum: 1

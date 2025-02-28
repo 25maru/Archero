@@ -31,7 +31,7 @@ public class StageSpawn : MonoBehaviour
             stage = 1;
         }
 
-        Floor.text = "Floor" + stage.ToString("00");
+        Floor.text = "Floor : " + stage.ToString("00");
     }
 
     private void Start()
@@ -49,10 +49,10 @@ public class StageSpawn : MonoBehaviour
         }
         Instantiate(thisStage, Enemypool);
 
-        if (stage == 1) // Ã¹ Æ©Åä¸®¾ó ½Ã ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ ÃÊ±âÈ­
+        if (stage == 1) // Ã¹ Æ©ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         {
-            PlayerStat stat = PlaySceneManager.Instance.player.GetComponent<PlayerStat>(); // ÇÃ·¹ÀÌ¾î ½ºÅÈÁ¤º¸ ¹Þ¾Æ¿À±â
-            stat.InitGameData(); // °ÔÀÓ µ¥ÀÌÅÍ ÃÊ±âÈ­
+            PlayerStat stat = PlaySceneManager.Instance.player.GetComponent<PlayerStat>(); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½
+            stat.InitGameData(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         }
     }
 
@@ -60,23 +60,23 @@ public class StageSpawn : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (stage % 10 == 0) //10¾¿ÀÏ ½Ã
+            if (stage % 10 == 0) //10ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
             {
-                PlayerPrefs.SetInt(SaveKey, stage); //½ºÅ×ÀÌÁö ÀúÀå
-                PlayerStat stat = PlaySceneManager.Instance.player.GetComponent<PlayerStat>(); // ÇÃ·¹ÀÌ¾î ½ºÅÈÁ¤º¸ ¹Þ¾Æ¿À±â
+                PlayerPrefs.SetInt(SaveKey, stage); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                PlayerStat stat = PlaySceneManager.Instance.player.GetComponent<PlayerStat>(); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½
 
-                if (SaveKey == "Tutorial") //10¿¡¼­ Æ©Åä¸®¾ó Á¾·á
+                if (SaveKey == "Tutorial") //10ï¿½ï¿½ï¿½ï¿½ Æ©ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 {
                     gameManager.ChangeState(GameManager.GameState.MainMenu);
 
-                    stat.InitGameData(); // °ÔÀÓ µ¥ÀÌÅÍ ÃÊ±âÈ­
+                    stat.InitGameData(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
                     return;
                 }
                 if(stage == 50)
                 {
                     gameManager.ChangeState(GameManager.GameState.MainMenu);
 
-                    stat.InitGameData(); // °ÔÀÓ µ¥ÀÌÅÍ ÃÊ±âÈ­
+                    stat.InitGameData(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
                     return;
                 }
             }

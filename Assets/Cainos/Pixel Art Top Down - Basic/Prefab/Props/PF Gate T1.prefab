@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 6644944589867386884}
   m_Layer: 0
   m_Name: PF Gate T1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

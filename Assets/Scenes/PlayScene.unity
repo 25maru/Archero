@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 129042976}
   m_Layer: 0
   m_Name: Collision
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2159,10 +2159,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 95607516}
     m_Modifications:
-    - target: {fileID: 2055102311959635368, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635369, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
       propertyPath: m_Name
       value: Door
@@ -2205,10 +2201,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055102312182832480, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
-      propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4318,7 +4310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 6842618479569418147, guid: 2f8a588938255f6418787a509cd1d8a9, type: 3}
-  projectileSpacing: 0.3
+  projectileSpacing: 0.45
   enemyPool: {fileID: 1737727503}
   offsetAttackDis: 1
   uiHealth: {fileID: 2025491633}
@@ -11258,9 +11250,29 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -1, y: 10, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 10, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 220
+  - m_RefCount: 222
     m_Data: {fileID: 11400000, guid: b2a051f4d0233614b858d8a84a8237f7, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -11279,7 +11291,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 220
+  - m_RefCount: 222
     m_Data: {fileID: 21300000, guid: 1097ab062412f244d97386c8a1c30b85, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -11298,7 +11310,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 220
+  - m_RefCount: 222
     m_Data:
       e00: 1
       e01: 0
@@ -11319,7 +11331,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 1.2395e-40, g: 1.2395e-40, b: 1.2395e-40, a: 1.2395e-40}
-  - m_RefCount: 220
+  - m_RefCount: 222
     m_Data: {r: 0.6392157, g: 0.7686275, b: 0.121568635, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1

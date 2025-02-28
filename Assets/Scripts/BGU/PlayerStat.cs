@@ -43,7 +43,7 @@ public class PlayerStat : BaseStat
             GameData.level++;
             GameData.exp = 0;
 
-            // ·¹º§¾÷½Ã ÇÊ¿ä °æÇèÄ¡ Áõ°¡
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
             GameData.maxExp = (int)Mathf.Ceil(GameData.maxExp * 1.2f);
         }
 
@@ -71,9 +71,9 @@ public class PlayerStat : BaseStat
 
     public override void Heal(int amount)
     {
-        if (GameData.IsDead) return; // Á×¾úÀ¸¸é È¸º¹ ºÒ°¡
+        if (GameData.IsDead) return; // ï¿½×¾ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½Ò°ï¿½
 
-        baseData.HP += amount;
+        GameData.HP += amount;
         if (GameData.HP > GetMaxHealth())
         {
             GameData.HP = GetMaxHealth();

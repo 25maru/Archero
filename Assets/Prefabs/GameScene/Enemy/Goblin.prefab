@@ -196,12 +196,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 6842618479569418147, guid: 255cc157d2a529145bd10533a55297be, type: 3}
   projectileSpacing: 0.2
-  followRange: 10
-  AttackRange: 5
+  followRange: 20
+  AttackRange: 7.5
   gizmoFollowColor: {r: 1, g: 0, b: 0, a: 1}
   gizmoAttackwColor: {r: 0, g: 0, b: 1, a: 1}
   offsetAttackDis: 1
-  gate: {fileID: 0}
 --- !u!114 &8090132493374507810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,4 +214,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseData: {fileID: 11400000, guid: 1500eb44323034e4b97cb88f51cb2f14, type: 2}
+  DeathPanel: {fileID: 0}
   dead: 0

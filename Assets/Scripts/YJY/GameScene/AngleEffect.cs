@@ -8,7 +8,10 @@ public class AngleEffect : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Angle");
+            var playData = PlaySceneManager.Instance.player.GetComponent<PlayerStat>();
+            playData.Heal(playData.GetMaxHealth());
+
+            PlaySceneManager.Instance.player.ChangeHealthUI();
         }
     }
 }
