@@ -10,8 +10,6 @@ public class HealthUI : MonoBehaviour
     private void Start()
     {
         slider = GetComponentInChildren<Slider>();
-
-        slider.value = 1;
     }
 
     public void UpdateHealth(float hp, float maxHp)

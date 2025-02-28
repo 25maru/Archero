@@ -16,7 +16,7 @@ public class PlayerStat : BaseStat
     public void InitGameData()
     {
         GameData.level = 1;
-        GameData.MaxHP = 1;
+        GameData.MaxHP = 0;
         GameData.HP = GetMaxHealth();
         GameData.Speed = 1;
         GameData.AttackDamage = 1;
@@ -26,6 +26,10 @@ public class PlayerStat : BaseStat
 
         GameData.Gold = 0;
         GameData.Diamond = 0;
+
+        GameData.projectileNum = 0;
+        GameData.projectilePierce = 0;
+        GameData.projectileReflection = 0;
     }
 
     public void GetExp(int exp)

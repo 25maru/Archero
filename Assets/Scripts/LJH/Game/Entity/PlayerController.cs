@@ -13,8 +13,23 @@ public class PlayerController : BaseController
     [SerializeField] ExpUI uiExp;
     [SerializeField] LevelUpUI uiLevelUp;
 
+    bool firstLoad = false;
+
+    protected override void Start()
+    {
+        base.Start();
+    }
+
     private void Update()
     {
+        if (!firstLoad)
+        {
+            ChangeHealthUI();
+            ChangeExpUI();
+
+            firstLoad = true;
+        }
+
         FindCloseEnemy();
 
         lastAttack += Time.deltaTime;
