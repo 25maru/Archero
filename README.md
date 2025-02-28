@@ -64,13 +64,13 @@
 
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/25maru/Archero.svg?style=for-the-badge
 [contributors-url]: https://github.com/25maru/Archero/graphs/contributors
 
-[commits-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[commits-shield]: https://img.shields.io/github/contributors/25maru/Archero.svg?style=for-the-badge
 [commits-url]: https://github.com/25maru/Archero/graphs/commit-activity
 
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/25maru/Archero.svg?style=for-the-badge
 [stars-url]: https://github.com/25maru/Archero/stargazers
 
 [unity.com]: https://img.shields.io/badge/Unity-FFFFFF?style=for-the-badge&logo=unity&logoColor=black
