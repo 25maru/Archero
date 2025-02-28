@@ -40,6 +40,8 @@ public class LevelUpUI : MonoBehaviour
     {
         gameObject.SetActive(true);
 
+        Time.timeScale = 0f;
+
         SetRandomAbility();
     }
 
@@ -53,5 +55,8 @@ public class LevelUpUI : MonoBehaviour
         randomAbility.Clear();
 
         gameObject.SetActive(false);
+
+
+        Time.timeScale = 1f;
     }
 }
