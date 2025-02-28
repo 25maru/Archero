@@ -19,11 +19,11 @@ MonoBehaviour:
   level: 0
   exp: 0
   maxExp: 0
-  Gold: 999
+  Gold: 7499
   Diamond: 999
-  speed: 3
-  attackDamage: 3
-  attackSpeed: 0.5
+  speed: 5
+  attackDamage: 5
+  attackSpeed: 0.3
   projectileNum: 1
   projectilePierce: 0
   projectileReflection: 0

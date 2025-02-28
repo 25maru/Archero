@@ -4318,7 +4318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 6842618479569418147, guid: 2f8a588938255f6418787a509cd1d8a9, type: 3}
-  projectileSpacing: 0.2
+  projectileSpacing: 0.3
   enemyPool: {fileID: 1737727503}
   offsetAttackDis: 1
   uiHealth: {fileID: 2025491633}

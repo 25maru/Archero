@@ -22,7 +22,7 @@ MonoBehaviour:
   Gold: 100
   Diamond: 0
   speed: 1
-  attackDamage: 1.5
+  attackDamage: 5
   attackSpeed: 1.5
   projectileNum: 1
   projectilePierce: 0
