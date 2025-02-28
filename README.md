@@ -76,5 +76,5 @@
 [unity.com]: https://img.shields.io/badge/Unity-FFFFFF?style=for-the-badge&logo=unity&logoColor=black
 [unity-url]: https://unity.com/kr
 
-[github.com]: https://img.shields.io/badge/github-#181717?style=for-the-badge&logo=unity&logoColor=white
+[github.com]: https://img.shields.io/badge/github-181717?style=for-the-badge&logo=unity&logoColor=white
 [github-url]: https://github.com
