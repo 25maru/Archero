@@ -46,10 +46,12 @@ public class AbilityHandler : MonoBehaviour
 
             case AbilityType.HpRecovery:
                 playerStat.Heal(100);
+                PlaySceneManager.Instance.player.ChangeHealthUI();
                 break;
 
             case AbilityType.MaxHp:
                 playerStat.SetMaxHealth(100);
+                PlaySceneManager.Instance.player.ChangeHealthUI();
                 break;
 
             case AbilityType.ProjectileCount:
