@@ -61,6 +61,8 @@ public class ProjectileController : MonoBehaviour
             {
                 pierceNum--;
             }
+
+            CreatePaticle(transform.position);
         }
         //// ���� �浹 ���� ���
         else if (collision.gameObject.CompareTag(wallTag))
@@ -87,7 +89,6 @@ public class ProjectileController : MonoBehaviour
             //}
         }
 
-        CreatePaticle(transform.position);
     }
 
     private void DestroyProjectile()
