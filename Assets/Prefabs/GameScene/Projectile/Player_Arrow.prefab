@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376fcd80262c09c45b711e3c02246260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 15
   impactParticleSystem: {fileID: 5241644763800610069, guid: e16873ded807c9e4ea3563f62f1a7ee7, type: 3}
   shotClip: {fileID: 8300000, guid: 486d9f527e5bccc488b4d9847b5c5509, type: 3}
   impactClip: {fileID: 8300000, guid: 41b832dc6c1bbc24f851c00b427eb4cc, type: 3}

@@ -86,6 +86,8 @@ public class ProjectileController : MonoBehaviour
             //    reflectionNum--;
             //}
         }
+
+        CreatePaticle(transform.position);
     }
 
     private void DestroyProjectile()

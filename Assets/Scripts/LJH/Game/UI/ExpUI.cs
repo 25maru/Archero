@@ -13,9 +13,6 @@ public class ExpUI : MonoBehaviour
     {
         slider = GetComponentInChildren<Slider>();
         textLevel = GetComponentInChildren<TextMeshProUGUI>();
-
-        slider.value = 0;
-        textLevel.text = "Lv. 1";
     }
 
     public void UpdatExp(float exp, float maxExp, int level)
